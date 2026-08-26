@@ -1,5 +1,6 @@
 import { ArrowUpRight, Braces, Database, PanelsTopLeft } from 'lucide-react'
 import './App.css'
+import horizontalLogo from './assets/img/horizontal-logo.png'
 
 const buildStages = [
   { label: 'Architecture', value: 'Mapped', state: 'done' },
@@ -18,8 +19,9 @@ function App() {
     <main className="maintenance-shell">
       <header className="topbar">
         <a className="brand" href="/" aria-label="Portfolio home">
-          <span className="brand-mark">//</span>
-          <span>PORTFOLIO_02</span>
+          <span className="brand-logo-frame">
+            <img className="brand-logo" src={horizontalLogo} alt="Judah" />
+          </span>
         </a>
 
         <div className="live-status" aria-label="Site status: work in progress">
