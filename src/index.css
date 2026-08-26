@@ -1,10 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
-.font-inter {
-  font-family: "Inter", sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.font-montserrat {
-  font-family: "Montserrat", sans-serif;
+html {
+  background: #111111;
+  color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #b86b3c;
+  color: #f2f0eb;
 }
