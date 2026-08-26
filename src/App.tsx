@@ -33,7 +33,7 @@ function App() {
       <section className="hero" aria-labelledby="maintenance-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span>Full-stack engineer</span>
+            <span>Full-stack Web Developer</span>
             <span>2026 / Indonesia</span>
           </p>
 
