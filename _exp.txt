@@ -2,4 +2,4 @@ buat content ada apa aja? setelah section dah kebentuk baru mulai pikirin ketent
 buat design tuh : tinggal pikirin genericnya aja, kayak spacing, discuss tentang vibesnya (terinspirasi dari apa, web lain kah, atau profile diri sendiri kah), trus pikirin dan tentuin color schemenya, font family nya pake apa aja, font size rulesnya gimana
 buat design screen: ngambil dari 2 sot sebelumnya (content dan design rules)
 buat technical roomnya: tech stack pake apa? archi componentnya gimana? dan hal teknikal yang lain
-buat implementation 
+buat implementation room ynag isinya workflow, plan, rules untuk agent based on hal yang ada di atas

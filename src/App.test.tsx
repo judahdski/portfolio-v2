@@ -29,6 +29,9 @@ describe('application routing', () => {
         name: /full-stack engineer who builds scalable systems/i,
       }),
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'My Professional Journey' }),
+    ).toBeInTheDocument()
   })
 
   it('renders the client experience inside the app shell', () => {

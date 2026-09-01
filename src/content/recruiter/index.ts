@@ -1,4 +1,6 @@
 import type { RecruiterContent } from '../types'
+import { recruiterExperience } from './experience'
+import { recruiterTechnicalSkills } from './technical-skills'
 
 export const recruiterContent: RecruiterContent = {
   identity: {
@@ -86,4 +88,6 @@ export const recruiterContent: RecruiterContent = {
       'Focus on business impact, not just features.',
     ],
   },
+  experience: recruiterExperience,
+  technicalSkills: recruiterTechnicalSkills,
 }

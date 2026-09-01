@@ -5,6 +5,8 @@ import IconButton from './IconButton'
 import SectionHeader from './SectionHeader'
 import RecruiterIdentitySection from '../../sections/recruiter/RecruiterIdentitySection'
 import RecruiterProfessionalProfileSection from '../../sections/recruiter/RecruiterProfessionalProfileSection'
+import RecruiterTechnicalSkillsSection from '../../sections/recruiter/RecruiterTechnicalSkillsSection'
+import RecruiterExperienceSection from '../../sections/recruiter/RecruiterExperienceSection'
 
 afterEach(cleanup)
 
@@ -103,5 +105,98 @@ describe('UI primitives', () => {
     expect(screen.getByText('Technical focus')).toBeInTheDocument()
     expect(screen.queryByText('Expertise areas')).not.toBeInTheDocument()
     expect(screen.queryByText(/\d+%/)).not.toBeInTheDocument()
+  })
+
+  it('renders an accessible experience timeline without an unavailable CV link', () => {
+    render(
+      <RecruiterExperienceSection
+        content={{
+          title: 'My Professional Journey',
+          description: 'A timeline of verified experience.',
+          entries: [
+            {
+              id: 'current-role',
+              company: 'Current Company',
+              companyMark: 'CC',
+              position: 'Full-stack Developer',
+              period: { start: '2025-07', label: 'Jul 2025 - Present' },
+              employmentType: 'Full-time',
+              location: { city: 'Jakarta', country: 'Indonesia' },
+              current: true,
+              summary: 'Building reliable internal systems.',
+              technologies: ['TypeScript'],
+              contributions: ['Built a maintainable application.'],
+              collaboration: [],
+              architectureExposure: [],
+              operationalExposure: [],
+            },
+          ],
+        }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'My Professional Journey' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Professional experience timeline' }),
+    ).toBeInTheDocument()
+    expect(screen.getByText('Current')).toBeInTheDocument()
+    expect(screen.getByText('View experience details')).toBeInTheDocument()
+    expect(
+      screen.queryByRole('link', { name: /download cv/i }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('renders evidenced skill categories without fabricated proficiency ratings', () => {
+    render(
+      <RecruiterTechnicalSkillsSection
+        content={{
+          title: 'Technical Skills & Capabilities',
+          description: 'Skills grounded in professional work.',
+          categories: [
+            {
+              id: 'backend',
+              title: 'Backend',
+              description: 'Building application services.',
+              icon: 'backend',
+              emphasis: 'primary',
+              skills: [
+                {
+                  name: '.NET',
+                  type: 'technology',
+                  evidence: [
+                    {
+                      experienceId: 'verified-role',
+                      label: 'Verified product',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'empty',
+              title: 'Testing',
+              description: 'No confirmed evidence yet.',
+              icon: 'tooling',
+              emphasis: 'supporting',
+              skills: [],
+            },
+          ],
+        }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'Technical Skills & Capabilities' }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Backend' })).toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', { name: 'Testing' }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByText('Verified product')).toBeInTheDocument()
+    expect(
+      screen.queryByText(/expert|advanced|intermediate|\d+%/i),
+    ).not.toBeInTheDocument()
   })
 })

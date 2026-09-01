@@ -490,6 +490,656 @@
   stroke-width: 1.4;
 }
 
+.recruiter-experience {
+  overflow: clip;
+  border-top: 1px solid var(--color-border);
+}
+
+.experience-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr);
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.experience-header .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.experience-header .section-kicker svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: currentColor;
+}
+
+.experience-header h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.experience-header h2+p {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.experience-system-visual {
+  position: relative;
+  display: grid;
+  min-height: 13rem;
+  place-items: center;
+  color: var(--color-accent-strong);
+  background-image:
+    linear-gradient(rgba(200, 90, 46, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 90, 46, 0.13) 1px, transparent 1px);
+  background-size: 1.75rem 1.75rem;
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 25%,
+      black 70%,
+      transparent);
+}
+
+.experience-system-visual::before,
+.experience-system-visual::after {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(200, 90, 46, 0.32);
+  content: '';
+  transform: rotate(30deg) skew(-15deg);
+}
+
+.experience-system-visual::after {
+  width: 8rem;
+  height: 8rem;
+  border-color: rgba(200, 90, 46, 0.13);
+}
+
+.experience-system-visual svg {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1;
+}
+
+.experience-timeline {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-timeline::before {
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: calc(10rem + 0.5rem);
+  width: 1px;
+  background: var(--color-border);
+  content: '';
+}
+
+.experience-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10rem 1rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.experience-period {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 1.25rem;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.experience-period time {
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}
+
+.experience-period span {
+  width: fit-content;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-strong);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.experience-timeline-node {
+  position: relative;
+  z-index: 1;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 1.45rem;
+  border: 3px solid var(--color-text-primary);
+  border-radius: 50%;
+  background: var(--color-accent-strong);
+  box-shadow: 0 0 0 4px rgba(200, 90, 46, 0.12);
+}
+
+.experience-card {
+  position: relative;
+  min-width: 0;
+  background: linear-gradient(135deg,
+      var(--color-surface),
+      rgba(24, 26, 27, 0.72));
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.experience-card:hover,
+.experience-card:focus-within {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.experience-card.is-current {
+  box-shadow: inset 3px 0 0 var(--color-accent-strong);
+}
+
+.experience-card-main {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) 2.75rem;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.experience-company-mark {
+  display: grid;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.experience-card-content {
+  min-width: 0;
+}
+
+.experience-card-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.experience-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.experience-position {
+  margin: 0.4rem 0 0;
+  color: var(--color-accent-strong);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.experience-meta {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+  justify-items: end;
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+}
+
+.experience-meta span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.experience-meta svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.experience-technologies .badge {
+  min-height: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.experience-product {
+  margin: 1.25rem 0 0;
+  color: var(--color-text-primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.experience-summary {
+  max-width: 58rem;
+  margin: 0.45rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.experience-card-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.7rem;
+  border: 1px solid var(--color-accent-strong);
+  border-radius: 50%;
+  color: var(--color-accent-strong);
+}
+
+.experience-details {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.experience-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-details summary:hover {
+  color: var(--color-accent-strong);
+}
+
+.experience-details summary svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.experience-details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.experience-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.experience-detail-grid h4 {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experience-detail-grid ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.experience-detail-grid li::marker {
+  color: var(--color-accent-strong);
+}
+
+.experience-cv-callout {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.5rem 0 0 12rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.experience-cv-callout>svg {
+  color: var(--color-accent-strong);
+}
+
+.experience-cv-callout h3,
+.experience-cv-callout p {
+  margin: 0;
+}
+
+.experience-cv-callout h3 {
+  font-size: 0.85rem;
+}
+
+.experience-cv-callout p {
+  margin-top: 0.35rem;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+}
+
+.experience-cv-callout .button {
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.experience-cv-callout .button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.recruiter-technical-skills {
+  overflow: clip;
+  border-top: 1px solid var(--color-border);
+}
+
+.technical-skills-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.72fr);
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.technical-skills-header .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.technical-skills-header .section-kicker svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.technical-skills-header h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.technical-skills-header h2+p {
+  max-width: 37rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.technical-skills-system-visual {
+  position: relative;
+  display: grid;
+  min-height: 13rem;
+  place-items: center;
+  color: var(--color-accent-strong);
+  background-image:
+    linear-gradient(rgba(200, 90, 46, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 90, 46, 0.13) 1px, transparent 1px);
+  background-size: 1.75rem 1.75rem;
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 25%,
+      black 70%,
+      transparent);
+}
+
+.technical-skills-system-visual::before,
+.technical-skills-system-visual::after {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(200, 90, 46, 0.32);
+  content: '';
+  transform: rotate(30deg) skew(-15deg);
+}
+
+.technical-skills-system-visual::after {
+  width: 8rem;
+  height: 8rem;
+  border-color: rgba(200, 90, 46, 0.13);
+}
+
+.technical-skills-system-visual svg {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1;
+}
+
+.technical-skills-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 0 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.technical-skills-overview div {
+  display: grid;
+  gap: 0.4rem;
+  min-height: 6.5rem;
+  padding: 1.25rem;
+  border-left: 1px solid var(--color-border);
+  align-content: center;
+}
+
+.technical-skills-overview div:first-child {
+  border-left: 0;
+}
+
+.technical-skills-overview dt {
+  order: 2;
+  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.technical-skills-overview dd {
+  order: 1;
+  margin: 0;
+  color: var(--color-accent-strong);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.technical-skills-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 1.25rem;
+}
+
+.technical-skills-section-heading h3 {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.technical-skills-section-heading span {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+}
+
+.technical-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.technical-skill-card {
+  min-width: 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg,
+      var(--color-surface),
+      rgba(24, 26, 27, 0.72));
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.technical-skill-card:hover,
+.technical-skill-card:focus-within {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.technical-skill-card[data-emphasis='primary'] {
+  box-shadow: inset 0 2px 0 var(--color-accent-strong);
+}
+
+.technical-skill-card-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.technical-skill-card-header>svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--color-accent-strong);
+  stroke-width: 1.5;
+}
+
+.technical-skill-card h4 {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.technical-skill-card-header p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.technical-skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.technical-skill-chips .badge {
+  min-height: 1.5rem;
+  padding: 0.25rem 0.45rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.technical-skill-evidence {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.technical-skill-evidence summary {
+  min-height: 2.75rem;
+  padding: 0.8rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.technical-skill-evidence summary::-webkit-details-marker {
+  display: none;
+}
+
+.technical-skill-evidence summary::after {
+  float: right;
+  color: var(--color-accent-strong);
+  content: '↗';
+}
+
+.technical-skill-evidence ul {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0 0 0.5rem;
+  list-style: none;
+}
+
+.technical-skill-evidence li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+}
+
+.technical-skill-evidence a {
+  flex: 0 0 auto;
+  color: var(--color-accent-strong);
+  text-decoration: none;
+}
+
+.technical-skill-evidence a:hover {
+  text-decoration: underline;
+}
+
+.technical-skills-learning {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+}
+
+.technical-skills-learning svg {
+  flex: 0 0 auto;
+  color: var(--color-accent-strong);
+}
+
+.technical-skills-learning p {
+  margin: 0;
+}
+
 .coming-section {
   padding-top: 1.25rem;
   border-top: 1px solid var(--color-border);
@@ -665,6 +1315,47 @@
   .profile-detail-grid>section:nth-child(n + 3) {
     border-top: 1px solid var(--color-border);
   }
+
+  .technical-skills-header {
+    grid-template-columns: 1fr;
+  }
+
+  .technical-skills-system-visual {
+    display: none;
+  }
+
+  .technical-skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-header {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-system-visual {
+    display: none;
+  }
+
+  .experience-timeline::before {
+    left: calc(7.5rem + 0.5rem);
+  }
+
+  .experience-timeline-item {
+    grid-template-columns: 7.5rem 1rem minmax(0, 1fr);
+  }
+
+  .experience-card-main {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .experience-company-mark {
+    width: 3.75rem;
+  }
+
+  .experience-card-arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -790,5 +1481,140 @@
 
   .profile-principles li:first-child {
     border-top: 0;
+  }
+
+  .technical-skills-header h2 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .technical-skills-overview {
+    margin-bottom: 2.5rem;
+  }
+
+  .technical-skills-overview div {
+    min-height: 5.25rem;
+    padding: 0.75rem;
+  }
+
+  .technical-skills-overview dt {
+    font-size: 0.55rem;
+  }
+
+  .technical-skills-overview dd {
+    font-size: 1.5rem;
+  }
+
+  .technical-skills-section-heading {
+    display: block;
+  }
+
+  .technical-skills-section-heading span {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .technical-skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technical-skill-card {
+    padding: 1rem;
+  }
+
+  .technical-skill-card-header p {
+    max-width: 34rem;
+  }
+
+  .technical-skills-learning {
+    align-items: flex-start;
+  }
+
+  .experience-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .experience-header h2 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .experience-timeline {
+    gap: 1rem;
+  }
+
+  .experience-timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 0.4rem;
+  }
+
+  .experience-timeline-item {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .experience-period {
+    grid-column: 2;
+    grid-row: 1;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 0.75rem;
+  }
+
+  .experience-timeline-node {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0.15rem;
+  }
+
+  .experience-card {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 1rem;
+  }
+
+  .experience-card-main {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+  }
+
+  .experience-company-mark {
+    width: 3.5rem;
+    font-size: 0.7rem;
+  }
+
+  .experience-card-heading {
+    display: block;
+  }
+
+  .experience-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .experience-position {
+    font-size: 0.7rem;
+  }
+
+  .experience-meta {
+    justify-items: start;
+    margin-top: 1rem;
+  }
+
+  .experience-technologies,
+  .experience-product,
+  .experience-summary,
+  .experience-details {
+    grid-column: 1 / -1;
+  }
+
+  .experience-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-cv-callout {
+    grid-template-columns: auto 1fr;
+    margin-left: 1.75rem;
+  }
+
+  .experience-cv-callout .button {
+    grid-column: 1 / -1;
   }
 }
