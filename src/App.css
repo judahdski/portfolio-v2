@@ -240,6 +240,256 @@
   text-transform: uppercase;
 }
 
+.recruiter-profile {
+  position: relative;
+  overflow: clip;
+  border-top: 1px solid var(--color-border);
+  background: rgba(17, 17, 17, 0.72);
+}
+
+.recruiter-profile-intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.7fr) minmax(10rem,
+      0.45fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.recruiter-profile-intro h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.recruiter-profile-intro h2 span {
+  color: var(--color-accent-strong);
+}
+
+.recruiter-profile-summary {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.recruiter-profile-summary p {
+  margin: 0;
+}
+
+.recruiter-profile-summary p+p {
+  margin-top: 1.25rem;
+}
+
+.profile-system-visual {
+  position: relative;
+  display: grid;
+  min-height: 13rem;
+  place-items: center;
+  color: var(--color-accent-strong);
+  background-image:
+    linear-gradient(rgba(200, 90, 46, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 90, 46, 0.12) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+  mask-image: radial-gradient(circle, black 22%, transparent 70%);
+}
+
+.profile-system-visual::before {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid rgba(200, 90, 46, 0.28);
+  content: '';
+  transform: rotate(45deg);
+}
+
+.profile-system-visual svg {
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 1;
+}
+
+.profile-specializations {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.profile-group-label,
+.profile-detail-grid h3 {
+  margin: 0 0 1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-specialization-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.profile-specialization-grid .card {
+  min-height: 15rem;
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.profile-specialization-grid .card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.profile-specialization-grid svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--color-accent-strong);
+  stroke-width: 1.5;
+}
+
+.profile-specialization-grid h3 {
+  margin: 2.25rem 0 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.profile-specialization-grid p {
+  margin: 0.75rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.profile-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1.35fr 1fr;
+  margin-top: 1.5rem;
+  padding-block: 1.5rem;
+  border-block: 1px solid var(--color-border);
+}
+
+.profile-detail-grid>section {
+  min-width: 0;
+  padding-inline: 1.5rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.profile-detail-grid>section:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.profile-detail-grid>section:last-child {
+  padding-right: 0;
+}
+
+.profile-detail-list,
+.profile-focus-items,
+.profile-principles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-detail-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.profile-detail-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-text-secondary);
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.profile-detail-list svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  color: var(--color-accent-strong);
+}
+
+.profile-focus-items {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.profile-focus-items li {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+}
+
+.profile-focus-indicator {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-border);
+}
+
+.profile-focus-items [data-emphasis='primary'] .profile-focus-indicator {
+  background: var(--color-accent-strong);
+}
+
+.profile-focus-items [data-emphasis='supporting'] .profile-focus-indicator {
+  background: var(--color-accent);
+  opacity: 0.55;
+}
+
+.profile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-badges .badge {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.profile-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.profile-principles li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  min-height: 7rem;
+  padding: 1.5rem;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.profile-principles li:first-child {
+  border-left: 0;
+}
+
+.profile-principles svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-accent-strong);
+  stroke-width: 1.4;
+}
+
 .coming-section {
   padding-top: 1.25rem;
   border-top: 1px solid var(--color-border);
@@ -384,6 +634,39 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .recruiter-profile-intro {
+    grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.8fr);
+  }
+
+  .profile-system-visual {
+    display: none;
+  }
+
+  .profile-specialization-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-detail-grid>section,
+  .profile-detail-grid>section:first-child,
+  .profile-detail-grid>section:last-child {
+    padding: 1.5rem;
+    border: 0;
+  }
+
+  .profile-detail-grid>section:nth-child(even) {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .profile-detail-grid>section:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border);
+  }
+}
+
 @media (max-width: 640px) {
 
   .app-header,
@@ -441,5 +724,71 @@
     bottom: auto;
     width: 100%;
     background: var(--color-surface);
+  }
+
+  .recruiter-profile-intro {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .recruiter-profile-intro h2 {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .profile-specialization-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-specialization-grid .card {
+    min-height: 12rem;
+    padding: 1rem;
+  }
+
+  .profile-specialization-grid .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+
+  .profile-specialization-grid h3 {
+    margin-top: 1.5rem;
+    font-size: 0.78rem;
+  }
+
+  .profile-specialization-grid p {
+    font-size: 0.7rem;
+  }
+
+  .profile-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-detail-grid>section,
+  .profile-detail-grid>section:first-child,
+  .profile-detail-grid>section:last-child,
+  .profile-detail-grid>section:nth-child(even),
+  .profile-detail-grid>section:nth-child(n + 3) {
+    padding: 1.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile-detail-grid>section:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .profile-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-principles li,
+  .profile-principles li:first-child {
+    min-height: auto;
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile-principles li:first-child {
+    border-top: 0;
   }
 }

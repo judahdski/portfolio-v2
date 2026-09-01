@@ -27,8 +27,35 @@ export type RecruiterIdentity = {
   links: ProfessionalLink[]
 }
 
+export type ProfessionalProfileIcon =
+  'code' | 'database' | 'integration' | 'rocket' | 'systems'
+
+export type ProfessionalProfileCapability = {
+  title: string
+  description: string
+  icon: ProfessionalProfileIcon
+}
+
+export type ProfessionalProfileFocus = {
+  label: string
+  emphasis: 'primary' | 'supporting'
+}
+
+export type RecruiterProfessionalProfile = {
+  statement: string
+  highlightedStatement: string
+  summary: string[]
+  coreSpecializations: ProfessionalProfileCapability[]
+  expertiseAreas: string[]
+  technicalFocus: ProfessionalProfileFocus[]
+  systemTypes: string[]
+  engineeringValues: string[]
+  principles: string[]
+}
+
 export type RecruiterContent = {
   identity: RecruiterIdentity
+  professionalProfile: RecruiterProfessionalProfile
 }
 
 export type ClientContent = {

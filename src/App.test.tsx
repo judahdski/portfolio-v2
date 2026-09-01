@@ -23,6 +23,12 @@ describe('application routing', () => {
     expect(
       screen.getByText(/engineer who cares about the system/i),
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: /full-stack engineer who builds scalable systems/i,
+      }),
+    ).toBeInTheDocument()
   })
 
   it('renders the client experience inside the app shell', () => {

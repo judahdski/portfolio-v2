@@ -4,6 +4,7 @@ import Button from './Button'
 import IconButton from './IconButton'
 import SectionHeader from './SectionHeader'
 import RecruiterIdentitySection from '../../sections/recruiter/RecruiterIdentitySection'
+import RecruiterProfessionalProfileSection from '../../sections/recruiter/RecruiterProfessionalProfileSection'
 
 afterEach(cleanup)
 
@@ -66,5 +67,41 @@ describe('UI primitives', () => {
     expect(
       screen.queryByLabelText('Professional metadata'),
     ).not.toBeInTheDocument()
+  })
+
+  it('renders a professional profile without invented proficiency scores', () => {
+    render(
+      <RecruiterProfessionalProfileSection
+        content={{
+          statement: 'Full-stack engineer who builds reliable systems that',
+          highlightedStatement: 'create real impact.',
+          summary: ['A systems-focused professional summary.'],
+          coreSpecializations: [
+            {
+              title: 'System Design',
+              description: 'Maintainable systems with clear boundaries.',
+              icon: 'systems',
+            },
+          ],
+          expertiseAreas: [],
+          technicalFocus: [
+            { label: 'Backend Development', emphasis: 'primary' },
+          ],
+          systemTypes: [],
+          engineeringValues: [],
+          principles: [],
+        }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', {
+        name: /full-stack engineer who builds reliable systems/i,
+      }),
+    ).toBeInTheDocument()
+    expect(screen.getByText('System Design')).toBeInTheDocument()
+    expect(screen.getByText('Technical focus')).toBeInTheDocument()
+    expect(screen.queryByText('Expertise areas')).not.toBeInTheDocument()
+    expect(screen.queryByText(/\d+%/)).not.toBeInTheDocument()
   })
 })
