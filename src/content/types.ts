@@ -126,11 +126,128 @@ export type RecruiterTechnicalSkills = {
   learningStatement?: string
 }
 
+export type ProjectCategory = {
+  id: string
+  label: string
+}
+
+export type ProjectPeriod = {
+  start: string
+  end?: string
+  label: string
+}
+
+export type ProjectLink = {
+  label: string
+  href: string
+}
+
+export type ProjectMedia = {
+  src: string
+  alt: string
+}
+
+export type RecruiterProject = {
+  id: string
+  name: string
+  type: string
+  categories: ProjectCategory['id'][]
+  domain: string
+  period: ProjectPeriod
+  role: string
+  summary: string
+  responsibilities: string[]
+  technicalStack: string[]
+  architecture: string[]
+  features: string[]
+  experienceIds: ExperienceEntry['id'][]
+  visualVariant: 'dashboard' | 'workflow' | 'map'
+  teamContext?: string[]
+  technicalChallenges?: string[]
+  engineeringDecisions?: string[]
+  integrations?: string[]
+  databases?: string[]
+  deployment?: string[]
+  complexityIndicators?: string[]
+  outcome?: string[]
+  visibility?: 'public' | 'private'
+  repository?: ProjectLink
+  liveDemo?: ProjectLink
+  caseStudyPath?: string
+  media?: ProjectMedia[]
+}
+
+export type RecruiterProjects = {
+  title: string
+  description: string
+  categories: ProjectCategory[]
+  projects: RecruiterProject[]
+}
+
+export type EngineeringTopicId =
+  | 'architecture'
+  | 'frontend'
+  | 'backend-api'
+  | 'database'
+  | 'integrations'
+  | 'deployment'
+  | 'complexity'
+
+export type EngineeringTopicIcon =
+  | 'api'
+  | 'architecture'
+  | 'complexity'
+  | 'database'
+  | 'deployment'
+  | 'frontend'
+  | 'integration'
+
+export type EngineeringEvidence = {
+  projectId: RecruiterProject['id']
+  label: string
+  details: string[]
+}
+
+export type EngineeringTopic = {
+  id: EngineeringTopicId
+  title: string
+  summary: string
+  icon: EngineeringTopicIcon
+  evidence: EngineeringEvidence[]
+}
+
+export type EngineeringDiagramNode = {
+  id: string
+  label: string
+  detail: string
+  layer: 'interface' | 'service' | 'data' | 'delivery' | 'integration'
+}
+
+export type EngineeringStackGroup = {
+  label: string
+  technologies: string[]
+}
+
+export type RecruiterEngineeringDetails = {
+  title: string
+  description: string
+  featuredProjectId: RecruiterProject['id']
+  featuredProjectLabel: string
+  diagramTitle: string
+  diagramDescription: string
+  diagramNodes: EngineeringDiagramNode[]
+  stackGroups: EngineeringStackGroup[]
+  topics: EngineeringTopic[]
+  principle: string
+}
+
 export type RecruiterContent = {
   identity: RecruiterIdentity
   professionalProfile: RecruiterProfessionalProfile
   experience: RecruiterExperience
   technicalSkills: RecruiterTechnicalSkills
+  projects: RecruiterProjects
+  engineeringDetails: RecruiterEngineeringDetails
 }
 
 export type ClientContent = {
