@@ -1,4 +1,6 @@
 import type { RecruiterContent } from '../types'
+import { recruiterCareerEvidence } from './career-evidence'
+import { recruiterContact } from './contact'
 import { recruiterEngineeringDetails } from './engineering-details'
 import { recruiterExperience } from './experience'
 import { recruiterProjects } from './projects'
@@ -94,4 +96,6 @@ export const recruiterContent: RecruiterContent = {
   technicalSkills: recruiterTechnicalSkills,
   projects: recruiterProjects,
   engineeringDetails: recruiterEngineeringDetails,
+  careerEvidence: recruiterCareerEvidence,
+  contact: recruiterContact,
 }

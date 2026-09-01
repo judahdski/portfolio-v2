@@ -9,6 +9,8 @@ import { afterEach, describe, expect, it } from 'vitest'
 import Button from './Button'
 import IconButton from './IconButton'
 import SectionHeader from './SectionHeader'
+import RecruiterCareerEvidenceSection from '../../sections/recruiter/RecruiterCareerEvidenceSection'
+import RecruiterContactSection from '../../sections/recruiter/RecruiterContactSection'
 import RecruiterEngineeringDetailsSection from '../../sections/recruiter/RecruiterEngineeringDetailsSection'
 import RecruiterIdentitySection from '../../sections/recruiter/RecruiterIdentitySection'
 import RecruiterProfessionalProfileSection from '../../sections/recruiter/RecruiterProfessionalProfileSection'
@@ -371,5 +373,102 @@ describe('UI primitives', () => {
 
     fireEvent.keyDown(architectureTab, { key: 'Home' })
     expect(overviewTab).toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('renders only verified career evidence with supporting provenance', () => {
+    render(
+      <RecruiterCareerEvidenceSection
+        content={{
+          title: 'Evidence of Professional',
+          highlightedTitle: 'Growth & Commitment',
+          description: 'Verified professional milestones.',
+          categories: [
+            {
+              id: 'achievements',
+              title: 'Professional Achievements',
+              description: 'Evidence from documented experience.',
+              icon: 'award',
+              items: [
+                {
+                  id: 'verified-achievement',
+                  title: 'Verified Achievement',
+                  organization: 'Verified Company',
+                  description: 'A documented professional milestone.',
+                  icon: 'award',
+                  links: [
+                    {
+                      label: 'View supporting experience',
+                      href: '#experience-verified',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'certifications',
+              title: 'Certifications',
+              description: 'No verified records.',
+              icon: 'certificate',
+              items: [],
+            },
+          ],
+          closingStatement: 'Only verified evidence is surfaced.',
+        }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'Verified Achievement' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: 'View supporting experience' }),
+    ).toHaveAttribute('href', '#experience-verified')
+    expect(screen.queryByText('Certifications')).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('navigation', { name: 'Evidence categories' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('renders only verified contact destinations', () => {
+    render(
+      <RecruiterContactSection
+        content={{
+          title: 'Continue with the',
+          highlightedTitle: 'right conversation.',
+          description: 'Verified contact paths.',
+          methods: [
+            {
+              id: 'projects',
+              label: 'Selected projects',
+              description: 'Review the systems.',
+              value: 'Recruiter project portfolio',
+              href: '#recruiter-projects',
+              icon: 'projects',
+              actionLabel: 'View projects',
+            },
+            {
+              id: 'github',
+              label: '',
+              description: 'Unavailable profile.',
+              value: '',
+              href: '',
+              icon: 'github',
+              actionLabel: 'View GitHub',
+            },
+          ],
+          collaborationPrompt: 'Interested in discussing the work?',
+          closingStatement: 'Only verified destinations are surfaced.',
+        }}
+      />,
+    )
+
+    expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute(
+      'href',
+      '#recruiter-projects',
+    )
+    expect(screen.queryByText('Unavailable profile.')).not.toBeInTheDocument()
+    expect(
+      screen.getByText('Only verified destinations are surfaced.'),
+    ).toBeInTheDocument()
   })
 })

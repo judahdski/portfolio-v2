@@ -1,6 +1,6 @@
-import Container from '../components/ui/Container'
-import Section from '../components/ui/Section'
 import { recruiterContent } from '../content/recruiter'
+import RecruiterContactSection from '../sections/recruiter/RecruiterContactSection'
+import RecruiterCareerEvidenceSection from '../sections/recruiter/RecruiterCareerEvidenceSection'
 import RecruiterEngineeringDetailsSection from '../sections/recruiter/RecruiterEngineeringDetailsSection'
 import RecruiterExperienceSection from '../sections/recruiter/RecruiterExperienceSection'
 import RecruiterIdentitySection from '../sections/recruiter/RecruiterIdentitySection'
@@ -23,16 +23,10 @@ function RecruiterPage() {
       <RecruiterEngineeringDetailsSection
         content={recruiterContent.engineeringDetails}
       />
-      <Section
-        id="contact"
-        className="coming-section"
-        aria-label="Recruiter portfolio sections"
-      >
-        <Container className="coming-section-inner">
-          <span>Career evidence</span>
-          <span>Being assembled for Phase 04</span>
-        </Container>
-      </Section>
+      <RecruiterCareerEvidenceSection
+        content={recruiterContent.careerEvidence}
+      />
+      <RecruiterContactSection content={recruiterContent.contact} />
     </div>
   )
 }

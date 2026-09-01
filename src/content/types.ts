@@ -241,6 +241,82 @@ export type RecruiterEngineeringDetails = {
   principle: string
 }
 
+export type CareerEvidenceCategoryId =
+  | 'education'
+  | 'certifications'
+  | 'achievements'
+  | 'learning'
+  | 'contributions'
+  | 'public-work'
+
+export type CareerEvidenceIcon =
+  | 'award'
+  | 'certificate'
+  | 'contribution'
+  | 'education'
+  | 'learning'
+  | 'public-work'
+
+export type CareerEvidenceLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+export type CareerEvidenceItem = {
+  id: string
+  title: string
+  organization: string
+  description: string
+  icon: CareerEvidenceIcon
+  dateLabel?: string
+  status?: string
+  details?: string[]
+  links: CareerEvidenceLink[]
+}
+
+export type CareerEvidenceCategory = {
+  id: CareerEvidenceCategoryId
+  title: string
+  description: string
+  icon: CareerEvidenceIcon
+  items: CareerEvidenceItem[]
+}
+
+export type RecruiterCareerEvidence = {
+  title: string
+  highlightedTitle: string
+  description: string
+  categories: CareerEvidenceCategory[]
+  closingStatement: string
+}
+
+export type RecruiterContactIcon =
+  'email' | 'linkedin' | 'github' | 'cv' | 'projects'
+
+export type RecruiterContactMethod = {
+  id: string
+  label: string
+  description: string
+  value: string
+  href: string
+  icon: RecruiterContactIcon
+  actionLabel: string
+  external?: boolean
+  download?: boolean
+}
+
+export type RecruiterContact = {
+  title: string
+  highlightedTitle: string
+  description: string
+  availability?: string
+  location?: string
+  methods: RecruiterContactMethod[]
+  collaborationPrompt: string
+  closingStatement: string
+}
+
 export type RecruiterContent = {
   identity: RecruiterIdentity
   professionalProfile: RecruiterProfessionalProfile
@@ -248,6 +324,8 @@ export type RecruiterContent = {
   technicalSkills: RecruiterTechnicalSkills
   projects: RecruiterProjects
   engineeringDetails: RecruiterEngineeringDetails
+  careerEvidence: RecruiterCareerEvidence
+  contact: RecruiterContact
 }
 
 export type ClientContent = {

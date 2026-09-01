@@ -25,7 +25,7 @@ function ExperienceTimelineItem({ entry }: { entry: ExperienceEntry }) {
   ].filter((group) => group.items.length > 0)
 
   return (
-    <li className="experience-timeline-item">
+    <li id={`experience-${entry.id}`} className="experience-timeline-item">
       <div className="experience-period">
         <time dateTime={entry.period.start}>{entry.period.label}</time>
         {entry.current && <span>Current</span>}

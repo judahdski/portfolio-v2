@@ -2002,6 +2002,570 @@
   height: 0.9rem;
 }
 
+.recruiter-career-evidence {
+  overflow: clip;
+  border-top: 1px solid var(--color-border);
+}
+
+.career-evidence-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.career-evidence-header .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.career-evidence-header .section-kicker svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.career-evidence-header h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.career-evidence-header h2 span {
+  display: block;
+  color: var(--color-accent-strong);
+}
+
+.career-evidence-header h2+p {
+  max-width: 40rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.career-evidence-index {
+  display: grid;
+  grid-template-columns: auto repeat(2, minmax(0, 1fr));
+  min-height: 8rem;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(135deg, rgba(200, 90, 46, 0.08), transparent 45%),
+    var(--color-surface);
+}
+
+.career-evidence-index>svg {
+  width: 2rem;
+  height: 2rem;
+  margin: 1.25rem;
+  color: var(--color-accent-strong);
+  stroke-width: 1.25;
+}
+
+.career-evidence-index>div {
+  display: grid;
+  min-height: 100%;
+  padding: 1.25rem;
+  align-content: center;
+  border-left: 1px solid var(--color-border);
+}
+
+.career-evidence-index strong {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.career-evidence-index span {
+  margin-top: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: 0.56rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.career-evidence-nav {
+  display: flex;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.career-evidence-nav a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-width: 12rem;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.62rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.career-evidence-nav a:hover {
+  background: rgba(200, 90, 46, 0.08);
+  color: var(--color-accent-strong);
+}
+
+.career-evidence-nav svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.career-evidence-nav span {
+  color: var(--color-text-muted);
+  font-size: 0.55rem;
+}
+
+.career-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.career-evidence-grid:has(> :only-child) {
+  grid-template-columns: 1fr;
+}
+
+.career-evidence-category {
+  border: 1px solid var(--color-border);
+  background: rgba(24, 26, 27, 0.62);
+}
+
+.career-evidence-category>header {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.career-evidence-category>header>div {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.career-evidence-category>header svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-accent-strong);
+}
+
+.career-evidence-category h3 {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.career-evidence-category>header>span {
+  color: var(--color-accent-strong);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+}
+
+.career-evidence-category>p {
+  max-width: 50rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.career-evidence-list {
+  display: grid;
+}
+
+.career-evidence-grid:has(> :only-child) .career-evidence-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.career-evidence-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-background);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.career-evidence-item:first-child {
+  border-top: 0;
+}
+
+.career-evidence-grid:has(> :only-child) .career-evidence-item {
+  border-top: 0;
+  border-left: 1px solid var(--color-border);
+}
+
+.career-evidence-grid:has(> :only-child) .career-evidence-item:first-child {
+  border-left: 0;
+}
+
+.career-evidence-item:hover,
+.career-evidence-item:focus-within {
+  background: rgba(200, 90, 46, 0.04);
+}
+
+.career-evidence-item-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(200, 90, 46, 0.4);
+  background: rgba(200, 90, 46, 0.08);
+  color: var(--color-accent-strong);
+}
+
+.career-evidence-item-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.career-evidence-item-content {
+  min-width: 0;
+}
+
+.career-evidence-item-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.career-evidence-item h4 {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.career-evidence-item-heading p {
+  margin: 0.3rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.6rem;
+}
+
+.career-evidence-item time {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: 0.58rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.career-evidence-item-description {
+  margin: 1rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.career-evidence-item-meta,
+.career-evidence-item-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.career-evidence-item-meta .badge {
+  min-height: 1.5rem;
+  padding: 0.25rem 0.45rem;
+  font-size: 0.52rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.career-evidence-item-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-accent-strong);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.career-evidence-item-links a:hover {
+  text-decoration: underline;
+}
+
+.career-evidence-item-links svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.career-evidence-principle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.career-evidence-principle>svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--color-accent-strong);
+}
+
+.career-evidence-principle span {
+  color: var(--color-accent-strong);
+  font-size: 0.56rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.career-evidence-principle p {
+  max-width: 58rem;
+  margin: 0.45rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.recruiter-contact {
+  overflow: clip;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.75fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.contact-header .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.contact-header .section-kicker svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.contact-header h2 {
+  max-width: 15ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.contact-header h2 span {
+  display: block;
+  color: var(--color-accent-strong);
+}
+
+.contact-header h2+p {
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.contact-availability {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  justify-self: end;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.contact-availability span {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #55b979;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.contact-method {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.contact-method:hover,
+.contact-method:focus-within {
+  border-color: var(--color-accent);
+  background: rgba(200, 90, 46, 0.05);
+  transform: translateY(-2px);
+}
+
+.contact-method-icon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(200, 90, 46, 0.45);
+  color: var(--color-accent-strong);
+}
+
+.contact-method-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.contact-method-content {
+  min-width: 0;
+}
+
+.contact-method-label,
+.contact-method-description,
+.contact-method-value {
+  margin: 0;
+}
+
+.contact-method-label {
+  color: var(--color-text-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.contact-method-description {
+  margin-top: 0.55rem;
+  color: var(--color-text-secondary);
+  font-size: 0.66rem;
+  line-height: 1.6;
+}
+
+.contact-method-value {
+  margin-top: 0.8rem;
+  overflow-wrap: anywhere;
+  color: var(--color-accent-strong);
+  font-size: 0.62rem;
+}
+
+.contact-method-action,
+.contact-cta-action {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 0.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.contact-method-action:hover,
+.contact-cta-action:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.contact-method-action svg,
+.contact-cta-action svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.contact-cta {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-accent);
+  background:
+    linear-gradient(135deg, rgba(200, 90, 46, 0.08), transparent 50%),
+    var(--color-surface);
+}
+
+.contact-cta>svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-accent-strong);
+  stroke-width: 1.25;
+}
+
+.contact-cta strong {
+  display: block;
+  font-size: 0.78rem;
+}
+
+.contact-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+  color: var(--color-text-muted);
+  font-size: 0.6rem;
+}
+
+.contact-location svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.contact-cta-action {
+  margin-top: 0;
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.contact-standard {
+  max-width: 48rem;
+  margin: 1rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  line-height: 1.6;
+}
+
 .coming-section {
   padding-top: 1.25rem;
   border-top: 1px solid var(--color-border);
@@ -2229,6 +2793,44 @@
 
   .engineering-diagram-step>svg {
     display: none;
+  }
+
+  .career-evidence-header {
+    grid-template-columns: 1fr;
+  }
+
+  .career-evidence-index {
+    max-width: 36rem;
+  }
+
+  .career-evidence-grid,
+  .career-evidence-grid:has(> :only-child) {
+    grid-template-columns: 1fr;
+  }
+
+  .career-evidence-grid:has(> :only-child) .career-evidence-list {
+    grid-template-columns: 1fr;
+  }
+
+  .career-evidence-grid:has(> :only-child) .career-evidence-item {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+
+  .career-evidence-grid:has(> :only-child) .career-evidence-item:first-child {
+    border-top: 0;
+  }
+
+  .contact-header {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-availability {
+    justify-self: start;
+  }
+
+  .contact-methods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .experience-header {
@@ -2623,6 +3225,98 @@
   .engineering-principle a {
     grid-column: 1 / -1;
     justify-content: center;
+  }
+
+  .career-evidence-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .career-evidence-header h2 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .career-evidence-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+  }
+
+  .career-evidence-index>svg {
+    display: none;
+  }
+
+  .career-evidence-index>div:first-of-type {
+    border-left: 0;
+  }
+
+  .career-evidence-index>div {
+    min-height: 5.5rem;
+    padding: 1rem;
+  }
+
+  .career-evidence-index strong {
+    font-size: 1.4rem;
+  }
+
+  .career-evidence-nav {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+  }
+
+  .career-evidence-nav a {
+    flex: 0 0 12rem;
+    scroll-snap-align: start;
+  }
+
+  .career-evidence-category>header,
+  .career-evidence-category>p,
+  .career-evidence-item,
+  .career-evidence-principle {
+    padding: 1rem;
+  }
+
+  .career-evidence-item {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .career-evidence-item-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .career-evidence-item-heading {
+    display: block;
+  }
+
+  .career-evidence-item time {
+    display: block;
+    margin-top: 0.45rem;
+    text-align: left;
+  }
+
+  .contact-header h2 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-method {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .contact-cta {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 1rem;
+  }
+
+  .contact-cta-action {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0.25rem;
   }
 
   .experience-header {
