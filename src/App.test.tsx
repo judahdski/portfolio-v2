@@ -40,9 +40,13 @@ describe('application routing', () => {
     expect(screen.getByRole('navigation')).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /clear digital products/i,
+        name: '[Your name]',
       }),
     ).toBeInTheDocument()
+    expect(screen.getByText('[Professional role]')).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /discuss your project/i }),
+    ).toHaveAttribute('href', '#contact')
   })
 
   it('renders the fallback page for an unknown route', () => {

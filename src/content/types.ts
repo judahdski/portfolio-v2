@@ -328,7 +328,27 @@ export type RecruiterContent = {
   contact: RecruiterContact
 }
 
+export type ClientAction = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+export type ClientIdentity = {
+  name: string
+  role: string
+  primaryCapability: string
+  profile: string
+  areasOfWork: string[]
+  portrait?: Portrait
+  location?: string
+  links: ProfessionalLink[]
+  contactInformation?: string
+  primaryAction: ClientAction
+  secondaryAction?: ClientAction
+}
+
 export type ClientContent = {
-  intro: AudienceIntro
+  identity: ClientIdentity
   inquiryLinks: ProfessionalLink[]
 }

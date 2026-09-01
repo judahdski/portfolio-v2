@@ -1,20 +1,12 @@
 import Container from '../components/ui/Container'
 import Section from '../components/ui/Section'
-import SectionHeader from '../components/ui/SectionHeader'
 import { clientContent } from '../content/client'
+import ClientIdentitySection from '../sections/client/ClientIdentitySection'
 
 function ClientPage() {
   return (
     <div className="audience-page">
-      <Section className="page-intro">
-        <Container>
-          <SectionHeader
-            kicker={clientContent.intro.kicker}
-            title={clientContent.intro.title}
-            description={clientContent.intro.description}
-          />
-        </Container>
-      </Section>
+      <ClientIdentitySection content={clientContent.identity} />
       <Section
         id="contact"
         className="coming-section"
