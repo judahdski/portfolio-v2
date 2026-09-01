@@ -1,6 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
+:root {
+  --color-background: #111111;
+  --color-surface: #181a1b;
+  --color-elevated: #25282a;
+  --color-border: #3a3e40;
+  --color-text-primary: #f2f0eb;
+  --color-text-secondary: #a7a7a3;
+  --color-text-muted: #6f716f;
+  --color-accent: #b86b3c;
+  --color-accent-strong: #c85a2e;
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --space-section: clamp(5rem, 12vw, 10rem);
+  --space-content: clamp(1.25rem, 5vw, 5rem);
+  --radius-sm: 2px;
+  --transition-fast: 180ms ease;
+  --content-width: 80rem;
+}
+
 *,
 *::before,
 *::after {
@@ -8,13 +29,16 @@
 }
 
 html {
-  background: #111111;
+  background: var(--color-background);
   color-scheme: dark;
-  font-family: 'Inter', sans-serif;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
   scroll-behavior: smooth;
 }
 
 body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
@@ -25,7 +49,31 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+button,
+a {
+  min-height: 2.75rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 ::selection {
-  background: #b86b3c;
-  color: #f2f0eb;
+  background: var(--color-accent);
+  color: var(--color-text-primary);
 }
