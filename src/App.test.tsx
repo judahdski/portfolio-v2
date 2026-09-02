@@ -46,7 +46,26 @@ describe('application routing', () => {
     expect(screen.getByText('[Professional role]')).toBeInTheDocument()
     expect(
       screen.getByRole('link', { name: /discuss your project/i }),
-    ).toHaveAttribute('href', '#contact')
+    ).toHaveAttribute('href', '#client-value')
+    expect(
+      screen.getByRole('heading', {
+        name: /\[value proposition headline\]/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'How I help your business' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /\[problems you help solve\]/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'Common challenges' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Common challenges' }),
+    ).toBeInTheDocument()
   })
 
   it('renders the fallback page for an unknown route', () => {

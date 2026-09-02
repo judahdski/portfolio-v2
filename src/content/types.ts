@@ -348,7 +348,119 @@ export type ClientIdentity = {
   secondaryAction?: ClientAction
 }
 
+export type ClientValueIcon = 'business' | 'delivery' | 'impact'
+
+export type ClientValuePillar = {
+  title: string
+  description: string
+  icon: ClientValueIcon
+}
+
+export type ClientHelpStep = {
+  title: string
+  description: string
+}
+
+export type ClientExpectedOutcome = {
+  title: string
+  description: string
+  icon: ClientValueIcon
+}
+
+export type ClientValueProposition = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  pillars: ClientValuePillar[]
+  helpTitle: string
+  helpDescription: string
+  helpSteps: ClientHelpStep[]
+  expectationsTitle: string
+  expectations: ClientExpectedOutcome[]
+}
+
+export type ClientProblemIcon =
+  | 'manual'
+  | 'data'
+  | 'visibility'
+  | 'workflow'
+  | 'integration'
+  | 'legacy'
+  | 'reporting'
+  | 'user'
+  | 'performance'
+  | 'security'
+
+export type ClientProblem = {
+  id: string
+  category: string
+  title: string
+  situation: string
+  painPoint: string
+  capability?: string
+  relatedProjectIds?: string[]
+  icon: ClientProblemIcon
+}
+
+export type ClientProblems = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  listTitle: string
+  listDescription: string
+  problems: ClientProblem[]
+  action?: ClientAction
+}
+
+export type ClientServiceIcon =
+  | 'web'
+  | 'database'
+  | 'deployment'
+  | 'integration'
+  | 'analytics'
+  | 'support'
+
+export type ClientService = {
+  id: string
+  number: string
+  name: string
+  category: string
+  description: string
+  scope: string[]
+  applicableProblemIds?: string[]
+  relatedProjectIds?: string[]
+  technicalScope?: string[]
+  businessScope?: string[]
+  addOns?: string[]
+  outOfScope?: string[]
+  icon: ClientServiceIcon
+}
+
+export type ClientQualityPrinciple = {
+  title: string
+  description: string
+  icon: ClientValueIcon
+}
+
+export type ClientServices = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  listTitle: string
+  services: ClientService[]
+  qualityTitle: string
+  qualityDescription?: string
+  qualityPrinciples: ClientQualityPrinciple[]
+  action?: ClientAction
+}
+
 export type ClientContent = {
   identity: ClientIdentity
+  valueProposition: ClientValueProposition
+  problems: ClientProblems
+  services: ClientServices
   inquiryLinks: ProfessionalLink[]
 }

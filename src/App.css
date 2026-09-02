@@ -243,6 +243,372 @@
   filter: saturate(0.58) contrast(1.12) brightness(0.82);
 }
 
+.client-value {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.client-value-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(12rem, 0.5fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.client-value-heading h2,
+.client-value-subheading h2,
+.client-value-expectations>h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.client-value-heading h2 {
+  max-width: 16ch;
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+
+.client-value-heading h2 span {
+  display: block;
+  color: var(--color-accent-strong);
+}
+
+.client-value-description {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.client-value-signal {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  min-height: 10rem;
+  padding: 2rem 1rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-accent-strong);
+  background: linear-gradient(135deg,
+      rgba(37, 40, 42, 0.62),
+      rgba(17, 17, 17, 0.3));
+}
+
+.client-value-signal span {
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.client-value-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  padding: 1px;
+  background: var(--color-border);
+  list-style: none;
+}
+
+.client-value-pillar {
+  min-height: 13rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+}
+
+.client-value-pillar>svg,
+.client-value-outcome>svg {
+  color: var(--color-accent-strong);
+}
+
+.client-value-pillar h3,
+.client-value-outcome h3,
+.client-value-steps h3 {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.client-value-pillar p,
+.client-value-outcome p,
+.client-value-steps p {
+  margin: 0.65rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.client-value-help {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  background: rgba(24, 26, 27, 0.72);
+}
+
+.client-value-subheading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.client-value-subheading h2,
+.client-value-expectations>h2 {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.client-value-subheading p {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.client-value-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.client-value-steps li {
+  min-width: 0;
+  padding: 1rem;
+  border-top: 1px solid var(--color-accent);
+  background: rgba(17, 17, 17, 0.5);
+}
+
+.client-value-step-number {
+  color: var(--color-accent-strong);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.client-value-steps h3 {
+  margin-top: 2rem;
+}
+
+.client-value-expectations {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.client-value-expectations>ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.client-value-outcome {
+  display: flex;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.client-value-outcome h3 {
+  margin-top: 0;
+}
+
+.client-problems {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.client-problems-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(14rem, 0.5fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.client-problems-heading h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.client-problems-heading h2 span {
+  display: block;
+  color: var(--color-accent-strong);
+}
+
+.client-problems-description {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.client-problems-visual {
+  position: relative;
+  display: grid;
+  min-height: 12rem;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(135deg,
+      transparent 48%,
+      rgba(198, 112, 58, 0.18) 49%,
+      transparent 51%),
+    rgba(24, 26, 27, 0.72);
+  color: var(--color-accent-strong);
+}
+
+.client-problems-visual::before,
+.client-problems-visual::after {
+  position: absolute;
+  width: 160%;
+  height: 1px;
+  background: var(--color-border-strong);
+  content: '';
+  transform: rotate(-24deg);
+}
+
+.client-problems-visual::after {
+  transform: rotate(24deg);
+}
+
+.client-problems-block {
+  z-index: 1;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-accent);
+  background: var(--color-surface);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+.client-problems-visual>span {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+.client-problems-stream {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-accent);
+  transform: rotate(45deg);
+}
+
+.client-problems-stream-input {
+  left: 1.5rem;
+  opacity: 0.45;
+}
+
+.client-problems-stream-output {
+  right: 1.5rem;
+  border-color: var(--color-accent-strong);
+  opacity: 0.8;
+}
+
+.client-problems-list-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.client-problems-list-heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.client-problems-list-heading p {
+  max-width: 30rem;
+  margin: 0.75rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.client-problems-action {
+  flex-shrink: 0;
+}
+
+.client-problems-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin: 1px 0 0;
+  padding: 1px;
+  background: var(--color-border);
+  list-style: none;
+}
+
+.client-problem-card {
+  min-width: 0;
+  min-height: 15rem;
+  padding: 1.25rem;
+  background: var(--color-surface);
+}
+
+.client-problem-card:hover {
+  background: var(--color-surface-raised);
+}
+
+.client-problem-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-accent-strong);
+}
+
+.client-problem-category {
+  margin: 1.5rem 0 0;
+  color: var(--color-accent-strong);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.client-problem-card h3 {
+  margin: 0.6rem 0 0;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.client-problem-situation,
+.client-problem-pain,
+.client-problem-capability {
+  margin: 0.65rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.client-problem-pain {
+  color: var(--color-text-muted);
+}
+
+.client-problem-capability {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--color-border);
+}
+
 .recruiter-identity-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr);
@@ -3056,6 +3422,71 @@
   .client-identity-portrait-frame {
     position: relative;
     aspect-ratio: 4 / 5;
+  }
+
+  .client-value-heading {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .client-value-heading h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .client-value-signal {
+    min-height: 7rem;
+  }
+
+  .client-value-pillars,
+  .client-value-steps,
+  .client-value-expectations>ul {
+    grid-template-columns: 1fr;
+  }
+
+  .client-value-subheading {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .client-value-steps {
+    gap: 0.75rem;
+  }
+
+  .client-value-steps li {
+    min-height: 0;
+  }
+
+  .client-value-expectations {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .client-problems-heading {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .client-problems-heading h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .client-problems-visual {
+    min-height: 9rem;
+  }
+
+  .client-problems-list-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .client-problems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-problem-card {
+    min-height: 0;
+    padding: 1.25rem;
   }
 
   .recruiter-identity-main h1 {
