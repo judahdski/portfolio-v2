@@ -20,6 +20,23 @@ type RecruiterProjectsSectionProps = {
 type SortOrder = 'newest' | 'oldest'
 type ViewMode = 'grid' | 'list'
 
+function EvidenceList({ title, items }: { title: string; items?: string[] }) {
+  if (!items?.length) {
+    return null
+  }
+
+  return (
+    <section>
+      <h4>{title}</h4>
+      <ul>
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 function ProjectVisual({ project }: { project: RecruiterProject }) {
   if (project.media?.[0]) {
     return (
@@ -165,6 +182,14 @@ function RecruiterProjectsSection({ content }: RecruiterProjectsSectionProps) {
                 <h3>{project.name}</h3>
                 <p className="project-summary">{project.summary}</p>
 
+                {project.visibility && (
+                  <p className="project-visibility">
+                    {project.visibility === 'public'
+                      ? 'Public project'
+                      : 'Private project'}
+                  </p>
+                )}
+
                 <dl className="project-metadata">
                   <div>
                     <dt>Period</dt>
@@ -191,26 +216,44 @@ function RecruiterProjectsSection({ content }: RecruiterProjectsSectionProps) {
                     <ArrowUpRight aria-hidden="true" />
                   </summary>
                   <div className="project-detail-grid">
-                    <section>
-                      <h4>Technical responsibility</h4>
-                      <ul>
-                        {project.responsibilities.map((responsibility) => (
-                          <li key={responsibility}>{responsibility}</li>
-                        ))}
-                      </ul>
-                    </section>
-                    <section>
-                      <h4>Architecture & delivery</h4>
-                      <ul>
-                        {[
-                          ...project.architecture,
-                          ...(project.deployment ?? []),
-                          ...(project.complexityIndicators ?? []),
-                        ].map((evidence) => (
-                          <li key={evidence}>{evidence}</li>
-                        ))}
-                      </ul>
-                    </section>
+                    <EvidenceList
+                      title="Technical responsibility"
+                      items={project.responsibilities}
+                    />
+                    <EvidenceList
+                      title="Major features"
+                      items={project.features}
+                    />
+                    <EvidenceList
+                      title="Architecture"
+                      items={project.architecture}
+                    />
+                    <EvidenceList
+                      title="Engineering decisions"
+                      items={project.engineeringDecisions}
+                    />
+                    <EvidenceList
+                      title="Technical challenges"
+                      items={project.technicalChallenges}
+                    />
+                    <EvidenceList
+                      title="Integrations"
+                      items={project.integrations}
+                    />
+                    <EvidenceList title="Databases" items={project.databases} />
+                    <EvidenceList
+                      title="Deployment"
+                      items={project.deployment}
+                    />
+                    <EvidenceList
+                      title="Team context"
+                      items={project.teamContext}
+                    />
+                    <EvidenceList
+                      title="Complexity indicators"
+                      items={project.complexityIndicators}
+                    />
+                    <EvidenceList title="Outcome" items={project.outcome} />
                   </div>
                 </details>
 
@@ -242,6 +285,12 @@ function RecruiterProjectsSection({ content }: RecruiterProjectsSectionProps) {
             </article>
           ))}
         </div>
+
+        {visibleProjects.length === 0 && (
+          <p className="projects-empty-state">
+            No projects match this category yet.
+          </p>
+        )}
 
         <dl
           className="projects-overview"

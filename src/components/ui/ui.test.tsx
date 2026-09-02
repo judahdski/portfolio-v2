@@ -235,6 +235,18 @@ describe('UI primitives', () => {
               architecture: ['Microservices'],
               features: ['Reporting'],
               deployment: ['Docker'],
+              engineeringDecisions: ['Separated services by domain boundary.'],
+              technicalChallenges: [
+                'Coordinating independent service releases.',
+              ],
+              integrations: ['Identity provider'],
+              databases: ['PostgreSQL'],
+              teamContext: ['CTO', 'Development team'],
+              complexityIndicators: [
+                'Multiple independently deployed services',
+              ],
+              outcome: ['Created a reliable reporting workflow.'],
+              visibility: 'private',
               experienceIds: ['current-role'],
               visualVariant: 'dashboard',
             },
@@ -270,6 +282,27 @@ describe('UI primitives', () => {
     expect(within(projectGrid!).getAllByRole('article')[0]).toHaveTextContent(
       'New System',
     )
+
+    const newSystemCard = within(projectGrid!).getAllByRole('article')[0]
+    fireEvent.click(within(newSystemCard).getByText('View project details'))
+    expect(
+      within(newSystemCard).getByText('Major features'),
+    ).toBeInTheDocument()
+    expect(
+      within(newSystemCard).getByText('Separated services by domain boundary.'),
+    ).toBeInTheDocument()
+    expect(
+      within(newSystemCard).getByText(
+        'Coordinating independent service releases.',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      within(newSystemCard).getByText('Identity provider'),
+    ).toBeInTheDocument()
+    expect(
+      within(newSystemCard).getByText('Private project'),
+    ).toBeInTheDocument()
+    expect(within(newSystemCard).getByText('Outcome')).toBeInTheDocument()
 
     fireEvent.change(screen.getByLabelText('Filter projects'), {
       target: { value: 'internal-tool' },

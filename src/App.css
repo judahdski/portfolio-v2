@@ -2218,6 +2218,17 @@
   line-height: 1.6;
 }
 
+.project-visibility {
+  width: fit-content;
+  margin: 0.75rem 0 0;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .project-metadata {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -2356,6 +2367,14 @@
 
 .project-grid[data-view='list'] .project-card-content {
   min-height: 22rem;
+}
+
+.projects-empty-state {
+  margin: 2rem 0 0;
+  padding: 2rem;
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-secondary);
+  text-align: center;
 }
 
 .projects-overview {
