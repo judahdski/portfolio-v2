@@ -495,11 +495,55 @@ export type ClientBusinessWorkflow = {
   selectedWorkflowId?: ClientWorkflow['id']
 }
 
+export type ClientOutcomeEvidenceStatus =
+  'verified' | 'placeholder' | 'not-available'
+
+export type ClientOutcomeImpactType =
+  | 'operational'
+  | 'visibility'
+  | 'quality'
+  | 'productivity'
+  | 'performance'
+  | 'cost'
+  | 'adoption'
+  | 'other'
+
+export type ClientOutcomeMetric = {
+  label: string
+  value: string
+  context?: string
+  status: ClientOutcomeEvidenceStatus
+}
+
+export type ClientBusinessOutcome = {
+  id: string
+  number: string
+  category: string
+  title: string
+  description: string
+  impactType: ClientOutcomeImpactType
+  evidenceStatus: ClientOutcomeEvidenceStatus
+  metrics?: ClientOutcomeMetric[]
+  evidenceNote?: string
+  relatedWorkflowIds?: string[]
+  relatedProjectIds?: string[]
+}
+
+export type ClientOutcomes = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  outcomes: ClientBusinessOutcome[]
+  closingStatement?: string
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
   problems: ClientProblems
   services: ClientServices
   businessWorkflow: ClientBusinessWorkflow
+  outcomes: ClientOutcomes
   inquiryLinks: ProfessionalLink[]
 }

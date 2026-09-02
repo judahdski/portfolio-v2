@@ -102,6 +102,18 @@ describe('application routing', () => {
     expect(screen.getByText('Automated')).toBeInTheDocument()
     expect(screen.getByText('[Request input]')).toBeInTheDocument()
     expect(screen.getByText('[Decision rule]')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /outcomes that move the business forward/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Business outcomes' }),
+    ).toBeInTheDocument()
+    expect(screen.getByText('[Clearer process visibility]')).toBeInTheDocument()
+    expect(screen.getAllByText('Placeholder evidence')).toHaveLength(2)
+    expect(screen.getAllByText('No metric available')).toHaveLength(2)
+    expect(screen.getByText('[Measured time saving]')).toBeInTheDocument()
   })
 
   it('renders the fallback page for an unknown route', () => {

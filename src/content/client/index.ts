@@ -390,5 +390,82 @@ export const clientContent: ClientContent = {
       },
     ],
   },
+  outcomes: {
+    kicker: 'Client portfolio / Section 07',
+    title: '[Outcomes that move the business forward]',
+    highlightedTitle: '[From delivery to impact]',
+    description:
+      '[The operational and business improvements a well-designed system can make visible over time.]',
+    outcomes: [
+      {
+        id: 'operational-clarity',
+        number: '01',
+        category: '[Operational improvement]',
+        title: '[Clearer process visibility]',
+        description:
+          '[Teams can see where work stands, what needs attention, and what happens next.]',
+        impactType: 'visibility',
+        evidenceStatus: 'placeholder',
+        metrics: [
+          {
+            label: 'Visibility signal',
+            value: '[Tracked process status]',
+            context: '[Evidence context]',
+            status: 'placeholder',
+          },
+        ],
+        evidenceNote: '[Add project evidence or mark as not available.]',
+        relatedWorkflowIds: ['business-process-template'],
+        relatedProjectIds: [],
+      },
+      {
+        id: 'reduced-manual-work',
+        number: '02',
+        category: '[Productivity improvement]',
+        title: '[Less repetitive manual work]',
+        description:
+          '[Automation and structured workflows can reduce repeated handoffs and duplicate data entry.]',
+        impactType: 'productivity',
+        evidenceStatus: 'placeholder',
+        metrics: [
+          {
+            label: 'Time saved',
+            value: '[Measured time saving]',
+            context: '[Per process cycle]',
+            status: 'placeholder',
+          },
+        ],
+        evidenceNote: '[Replace with measured evidence when available.]',
+        relatedWorkflowIds: ['business-process-template'],
+        relatedProjectIds: [],
+      },
+      {
+        id: 'decision-quality',
+        number: '03',
+        category: '[Decision support]',
+        title: '[More informed decisions]',
+        description:
+          '[Relevant information is brought together so teams can evaluate requests with greater context.]',
+        impactType: 'quality',
+        evidenceStatus: 'not-available',
+        relatedWorkflowIds: ['business-process-template'],
+        relatedProjectIds: [],
+      },
+      {
+        id: 'reliable-process-performance',
+        number: '04',
+        category: '[Process quality]',
+        title: '[More consistent execution]',
+        description:
+          '[Business rules, recorded decisions, and system feedback make the process easier to repeat and improve.]',
+        impactType: 'operational',
+        evidenceStatus: 'not-available',
+        relatedWorkflowIds: ['business-process-template'],
+        relatedProjectIds: [],
+      },
+    ],
+    closingStatement:
+      '[Outcome claims will be updated as project evidence is documented.]',
+  },
   inquiryLinks: [],
 }

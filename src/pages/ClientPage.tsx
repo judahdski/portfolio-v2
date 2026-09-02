@@ -4,6 +4,7 @@ import { clientContent } from '../content/client'
 import ClientIdentitySection from '../sections/client/ClientIdentitySection'
 import ClientProblemsSection from '../sections/client/ClientProblemsSection'
 import ClientBusinessWorkflowSection from '../sections/client/ClientBusinessWorkflowSection'
+import ClientOutcomesSection from '../sections/client/ClientOutcomesSection'
 import ClientServicesSection from '../sections/client/ClientServicesSection'
 import ClientValuePropositionSection from '../sections/client/ClientValuePropositionSection'
 
@@ -15,6 +16,7 @@ function ClientPage() {
       <ClientProblemsSection content={clientContent.problems} />
       <ClientServicesSection content={clientContent.services} />
       <ClientBusinessWorkflowSection content={clientContent.businessWorkflow} />
+      <ClientOutcomesSection content={clientContent.outcomes} />
       <Section
         id="contact"
         className="coming-section"
