@@ -114,6 +114,28 @@ describe('application routing', () => {
     expect(screen.getAllByText('Placeholder evidence')).toHaveLength(2)
     expect(screen.getAllByText('No metric available')).toHaveLength(2)
     expect(screen.getByText('[Measured time saving]')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /a clear process for meaningful work/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: '[My commitment]' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Working approach phases' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('[Discovery]')).toHaveLength(1)
+    expect(screen.getAllByText('[Deliver and support]')).toHaveLength(1)
+    expect(
+      screen.getByRole('list', { name: 'Working principles' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('[Communication channel and update cadence]'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: '[Start your project]' }),
+    ).toHaveAttribute('href', '#contact')
   })
 
   it('renders the fallback page for an unknown route', () => {

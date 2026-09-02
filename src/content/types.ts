@@ -538,6 +538,48 @@ export type ClientOutcomes = {
   closingStatement?: string
 }
 
+export type ClientApproachIcon =
+  'discovery' | 'planning' | 'design' | 'development' | 'testing' | 'delivery'
+
+export type ClientApproachPhase = {
+  id: string
+  number: string
+  name: string
+  description: string
+  clientInvolvement?: string
+  deliverables?: string[]
+  expectedInput?: string[]
+  feedbackPoint?: string
+  icon: ClientApproachIcon
+}
+
+export type ClientApproachPrincipleIcon =
+  'collaborative' | 'transparent' | 'quality' | 'results'
+
+export type ClientWorkingPrinciple = {
+  id: string
+  title: string
+  description: string
+  icon: ClientApproachPrincipleIcon
+}
+
+export type ClientWorkingApproach = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  commitmentTitle?: string
+  commitmentDescription?: string
+  phases: ClientApproachPhase[]
+  principles: ClientWorkingPrinciple[]
+  documentation?: string[]
+  communicationModel?: string
+  changeHandling?: string
+  deliveryExpectations?: string[]
+  closingStatement?: string
+  action?: ClientAction
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
@@ -545,5 +587,6 @@ export type ClientContent = {
   services: ClientServices
   businessWorkflow: ClientBusinessWorkflow
   outcomes: ClientOutcomes
+  workingApproach: ClientWorkingApproach
   inquiryLinks: ProfessionalLink[]
 }

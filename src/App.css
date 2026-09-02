@@ -1336,6 +1336,275 @@
   text-align: center;
 }
 
+.client-approach {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.client-approach-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.8fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.client-approach-heading h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.client-approach-heading h2 span {
+  display: block;
+  color: var(--color-accent-strong);
+}
+
+.client-approach-heading>div:first-child>p:last-child {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.client-approach-commitment {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.35rem;
+  border: 1px solid var(--color-border);
+  background: rgba(24, 26, 27, 0.72);
+  color: var(--color-accent-strong);
+}
+
+.client-approach-commitment h3 {
+  margin: 0;
+  color: var(--color-accent-strong);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.client-approach-commitment p {
+  margin: 0.65rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.client-approach-process {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.client-approach-process>h2 {
+  margin: 0 0 1rem;
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.client-approach-phases {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+  background: var(--color-border);
+  list-style: none;
+}
+
+.client-approach-phase-wrapper {
+  position: relative;
+  min-width: 0;
+  padding: 1px;
+  background: var(--color-border);
+}
+
+.client-approach-phase {
+  min-height: 19rem;
+  padding: 1.1rem;
+  background: var(--color-surface);
+}
+
+.client-approach-phase-topline {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-accent-strong);
+}
+
+.client-approach-phase-topline span {
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+}
+
+.client-approach-phase h3 {
+  margin: 1rem 0 0;
+  color: var(--color-text-primary);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.client-approach-phase-description {
+  margin: 0.7rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+  line-height: 1.55;
+}
+
+.client-approach-phase-details {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.client-approach-detail-list h4 {
+  margin: 0 0 0.3rem;
+  color: var(--color-text-muted);
+  font-size: 0.52rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.client-approach-detail-list ul {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.58rem;
+  line-height: 1.45;
+  list-style: none;
+}
+
+.client-approach-detail-list li::before {
+  margin-right: 0.3rem;
+  color: var(--color-accent-strong);
+  content: '•';
+}
+
+.client-approach-connector {
+  position: absolute;
+  top: 50%;
+  right: -0.65rem;
+  z-index: 1;
+  color: var(--color-accent-strong);
+  font-size: 0.8rem;
+}
+
+.client-approach-phase-wrapper:last-child .client-approach-connector {
+  display: none;
+}
+
+.client-approach-principles-panel {
+  margin-top: 1.5rem;
+  padding: 1px;
+  background: var(--color-border);
+}
+
+.client-approach-principles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  background: var(--color-border);
+  list-style: none;
+}
+
+.client-approach-principle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  min-height: 6.5rem;
+  padding: 1.15rem;
+  background: var(--color-surface);
+  color: var(--color-accent-strong);
+}
+
+.client-approach-principle h3 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.client-approach-principle p {
+  margin: 0.45rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.client-approach-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.5rem;
+  padding: 1px;
+  background: var(--color-border);
+}
+
+.client-approach-details>div {
+  min-height: 7rem;
+  padding: 1.1rem;
+  background: var(--color-surface);
+}
+
+.client-approach-details>div>svg {
+  color: var(--color-accent-strong);
+}
+
+.client-approach-details h3 {
+  margin: 0.7rem 0 0;
+  color: var(--color-text-primary);
+  font-size: 0.68rem;
+}
+
+.client-approach-details p {
+  margin: 0.45rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.client-approach-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  background: rgba(24, 26, 27, 0.72);
+}
+
+.client-approach-cta>div {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  color: var(--color-accent-strong);
+}
+
+.client-approach-cta p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.78rem;
+}
+
+.client-approach-cta .text-link {
+  flex-shrink: 0;
+}
+
+.client-approach-empty-state {
+  margin-top: 3rem;
+  padding: 2rem;
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
 .recruiter-identity-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr);
@@ -4158,6 +4427,24 @@
     grid-template-columns: 3rem minmax(0, 1fr) minmax(11rem, 0.6fr);
     gap: 1.25rem;
   }
+
+  .client-approach-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .client-approach-phases {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .client-approach-phase-wrapper:nth-child(3) .client-approach-connector,
+  .client-approach-phase-wrapper:nth-child(6) .client-approach-connector {
+    display: none;
+  }
+
+  .client-approach-principles,
+  .client-approach-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -4394,6 +4681,60 @@
   .client-outcome-evidence {
     grid-column: 2;
     padding-top: 0.25rem;
+  }
+
+  .client-approach-heading {
+    gap: 2rem;
+  }
+
+  .client-approach-heading h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .client-approach-commitment {
+    padding: 1rem;
+  }
+
+  .client-approach-phases {
+    display: block;
+    padding: 1px 1px 1px 1.25rem;
+  }
+
+  .client-approach-phase-wrapper {
+    padding: 1px 1px 1px 0;
+  }
+
+  .client-approach-phase {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .client-approach-connector {
+    top: auto;
+    right: auto;
+    bottom: -0.7rem;
+    left: -1.05rem;
+    transform: rotate(90deg);
+  }
+
+  .client-approach-principles,
+  .client-approach-details {
+    grid-template-columns: 1fr;
+  }
+
+  .client-approach-principle,
+  .client-approach-details>div {
+    min-height: 0;
+  }
+
+  .client-approach-cta {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .client-approach-cta .text-link {
+    justify-content: center;
   }
 
   .recruiter-identity-main h1 {

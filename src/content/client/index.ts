@@ -467,5 +467,138 @@ export const clientContent: ClientContent = {
     closingStatement:
       '[Outcome claims will be updated as project evidence is documented.]',
   },
+  workingApproach: {
+    kicker: 'Client portfolio / Section 08',
+    title: '[A clear process for meaningful work]',
+    highlightedTitle: '[From conversation to delivery]',
+    description:
+      '[A collaborative process that connects business context, implementation decisions, and measurable progress.]',
+    commitmentTitle: '[My commitment]',
+    commitmentDescription:
+      '[Clear communication, transparent decisions, and steady delivery from the first conversation through handover and iteration.]',
+    phases: [
+      {
+        id: 'discovery',
+        number: '01',
+        name: '[Discovery]',
+        description:
+          '[Understand the business context, goals, users, and current process.]',
+        clientInvolvement: '[Share business context and priorities.]',
+        expectedInput: ['[Business context]', '[Current process]'],
+        deliverables: ['[Discovery notes]', '[Initial problem framing]'],
+        feedbackPoint: '[Confirm shared understanding.]',
+        icon: 'discovery',
+      },
+      {
+        id: 'planning',
+        number: '02',
+        name: '[Plan]',
+        description:
+          '[Define scope, prioritize features, and create a practical delivery plan.]',
+        clientInvolvement: '[Align on priorities and constraints.]',
+        expectedInput: ['[Priority outcomes]', '[Known constraints]'],
+        deliverables: ['[Defined scope]', '[Project roadmap]'],
+        feedbackPoint: '[Approve the proposed direction.]',
+        icon: 'planning',
+      },
+      {
+        id: 'design',
+        number: '03',
+        name: '[Design]',
+        description:
+          '[Translate the agreed requirements into intuitive interfaces and system structure.]',
+        clientInvolvement: '[Review workflows and interface direction.]',
+        expectedInput: ['[User roles]', '[Brand or product references]'],
+        deliverables: ['[Workflow design]', '[Interface direction]'],
+        feedbackPoint: '[Review and refine the proposed experience.]',
+        icon: 'design',
+      },
+      {
+        id: 'development',
+        number: '04',
+        name: '[Build]',
+        description:
+          '[Develop a secure, maintainable solution with progress visible throughout implementation.]',
+        clientInvolvement: '[Stay available for questions and decisions.]',
+        deliverables: [
+          '[Working product increments]',
+          '[Implementation updates]',
+        ],
+        feedbackPoint: '[Review progress at agreed checkpoints.]',
+        icon: 'development',
+      },
+      {
+        id: 'testing',
+        number: '05',
+        name: '[Test and validate]',
+        description:
+          '[Test the solution against requirements, workflows, performance, and quality expectations.]',
+        clientInvolvement:
+          '[Validate business scenarios and acceptance criteria.]',
+        expectedInput: ['[Acceptance criteria]', '[Representative scenarios]'],
+        deliverables: ['[Validation findings]', '[Release readiness notes]'],
+        feedbackPoint: '[Confirm the solution is ready for delivery.]',
+        icon: 'testing',
+      },
+      {
+        id: 'delivery-and-support',
+        number: '06',
+        name: '[Deliver and support]',
+        description:
+          '[Deploy with confidence, complete the handover, and support the next iteration.]',
+        clientInvolvement: '[Prepare for handover and ongoing ownership.]',
+        deliverables: ['[Deployed solution]', '[Handover documentation]'],
+        feedbackPoint: '[Agree on support or iteration priorities.]',
+        icon: 'delivery',
+      },
+    ],
+    principles: [
+      {
+        id: 'collaborative',
+        title: '[Collaborative]',
+        description:
+          '[Involve the right people at key decisions and feedback points.]',
+        icon: 'collaborative',
+      },
+      {
+        id: 'transparent',
+        title: '[Transparent]',
+        description:
+          '[Keep progress, tradeoffs, and decisions visible throughout the work.]',
+        icon: 'transparent',
+      },
+      {
+        id: 'quality-focused',
+        title: '[Quality-focused]',
+        description:
+          '[Treat maintainability, security, and validation as part of delivery.]',
+        icon: 'quality',
+      },
+      {
+        id: 'result-driven',
+        title: '[Result-driven]',
+        description:
+          '[Keep the intended business outcome connected to implementation choices.]',
+        icon: 'results',
+      },
+    ],
+    documentation: [
+      '[Requirements and scope notes]',
+      '[Handover documentation]',
+    ],
+    communicationModel: '[Communication channel and update cadence]',
+    changeHandling:
+      '[How scope changes are discussed, assessed, and prioritized.]',
+    deliveryExpectations: [
+      '[Expected review points]',
+      '[Release or handover expectations]',
+    ],
+    closingStatement:
+      '[Ready to turn a business challenge into a clear delivery path?]',
+    action: {
+      label: '[Start your project]',
+      href: '#contact',
+    },
+  },
   inquiryLinks: [],
 }

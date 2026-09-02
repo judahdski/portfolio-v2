@@ -7,6 +7,7 @@ import ClientBusinessWorkflowSection from '../sections/client/ClientBusinessWork
 import ClientOutcomesSection from '../sections/client/ClientOutcomesSection'
 import ClientServicesSection from '../sections/client/ClientServicesSection'
 import ClientValuePropositionSection from '../sections/client/ClientValuePropositionSection'
+import ClientWorkingApproachSection from '../sections/client/ClientWorkingApproachSection'
 
 function ClientPage() {
   return (
@@ -17,6 +18,7 @@ function ClientPage() {
       <ClientServicesSection content={clientContent.services} />
       <ClientBusinessWorkflowSection content={clientContent.businessWorkflow} />
       <ClientOutcomesSection content={clientContent.outcomes} />
+      <ClientWorkingApproachSection content={clientContent.workingApproach} />
       <Section
         id="contact"
         className="coming-section"
