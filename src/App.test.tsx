@@ -66,6 +66,27 @@ describe('application routing', () => {
     expect(
       screen.getByRole('list', { name: 'Common challenges' }),
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /see how i solve them/i }),
+    ).toHaveAttribute('href', '#client-services')
+    expect(
+      screen.getByRole('heading', {
+        name: /\[services and capabilities\]/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'What I can help you with' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Services and capabilities' }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('[Service name]')).toHaveLength(6)
+    expect(
+      screen.getByRole('heading', { name: 'Built with quality at every step' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Quality principles' }),
+    ).toBeInTheDocument()
   })
 
   it('renders the fallback page for an unknown route', () => {

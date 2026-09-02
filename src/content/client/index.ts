@@ -86,6 +86,10 @@ export const clientContent: ClientContent = {
     description: '[Short explanation of the business problems addressed.]',
     listTitle: 'Common challenges',
     listDescription: '[Short explanation of the problems listed below.]',
+    action: {
+      label: 'See how I solve them',
+      href: '#client-services',
+    },
     problems: [
       {
         id: 'manual-processes',

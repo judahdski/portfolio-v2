@@ -415,12 +415,7 @@ export type ClientProblems = {
 }
 
 export type ClientServiceIcon =
-  | 'web'
-  | 'database'
-  | 'deployment'
-  | 'integration'
-  | 'analytics'
-  | 'support'
+  'web' | 'database' | 'deployment' | 'integration' | 'analytics' | 'support'
 
 export type ClientService = {
   id: string
