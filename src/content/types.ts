@@ -452,10 +452,54 @@ export type ClientServices = {
   action?: ClientAction
 }
 
+export type ClientWorkflowActor = {
+  id: string
+  name: string
+  role: string
+  type: 'human' | 'system' | 'external'
+}
+
+export type ClientWorkflowStage = {
+  id: string
+  number: string
+  name: string
+  description: string
+  actorIds: ClientWorkflowActor['id'][]
+  inputs?: string[]
+  outputs?: string[]
+  businessRules?: string[]
+  systemInteractions?: string[]
+  mode?: 'manual' | 'automated' | 'assisted'
+}
+
+export type ClientWorkflow = {
+  id: string
+  name: string
+  category: string
+  description: string
+  actors: ClientWorkflowActor[]
+  stages: ClientWorkflowStage[]
+  painPoints?: string[]
+  improvements?: string[]
+  relatedProblemIds?: string[]
+  relatedServiceIds?: string[]
+  relatedProjectIds?: string[]
+}
+
+export type ClientBusinessWorkflow = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  workflows: ClientWorkflow[]
+  selectedWorkflowId?: ClientWorkflow['id']
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
   problems: ClientProblems
   services: ClientServices
+  businessWorkflow: ClientBusinessWorkflow
   inquiryLinks: ProfessionalLink[]
 }

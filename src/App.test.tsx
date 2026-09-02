@@ -87,6 +87,21 @@ describe('application routing', () => {
     expect(
       screen.getByRole('list', { name: 'Quality principles' }),
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /business workflows represented in a system/i,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', {
+        name: '[Business process workflow] stages',
+      }),
+    ).toBeInTheDocument()
+    expect(screen.getAllByText('[Requester]')).toHaveLength(2)
+    expect(screen.getAllByText('Manual')).toHaveLength(2)
+    expect(screen.getByText('Automated')).toBeInTheDocument()
+    expect(screen.getByText('[Request input]')).toBeInTheDocument()
+    expect(screen.getByText('[Decision rule]')).toBeInTheDocument()
   })
 
   it('renders the fallback page for an unknown route', () => {

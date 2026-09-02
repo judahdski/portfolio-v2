@@ -3,6 +3,7 @@ import Section from '../components/ui/Section'
 import { clientContent } from '../content/client'
 import ClientIdentitySection from '../sections/client/ClientIdentitySection'
 import ClientProblemsSection from '../sections/client/ClientProblemsSection'
+import ClientBusinessWorkflowSection from '../sections/client/ClientBusinessWorkflowSection'
 import ClientServicesSection from '../sections/client/ClientServicesSection'
 import ClientValuePropositionSection from '../sections/client/ClientValuePropositionSection'
 
@@ -13,6 +14,7 @@ function ClientPage() {
       <ClientValuePropositionSection content={clientContent.valueProposition} />
       <ClientProblemsSection content={clientContent.problems} />
       <ClientServicesSection content={clientContent.services} />
+      <ClientBusinessWorkflowSection content={clientContent.businessWorkflow} />
       <Section
         id="contact"
         className="coming-section"
