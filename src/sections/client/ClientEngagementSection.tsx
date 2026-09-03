@@ -173,9 +173,9 @@ function ClientEngagementSection({ content }: Props) {
               {content.kicker}
             </p>
             <h2 id="client-engagement-title">
-              {content.title}
+              {content.title}{' '}
               {content.highlightedTitle && (
-                <span>{content.highlightedTitle}</span>
+                <span>{content.highlightedTitle} </span>
               )}
               <span>Better Results.</span>
             </h2>

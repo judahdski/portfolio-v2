@@ -9,6 +9,7 @@ import ClientServicesSection from '../sections/client/ClientServicesSection'
 import ClientValuePropositionSection from '../sections/client/ClientValuePropositionSection'
 import ClientWorkingApproachSection from '../sections/client/ClientWorkingApproachSection'
 import ClientEngagementSection from '../sections/client/ClientEngagementSection'
+import ClientTrustSection from '../sections/client/ClientTrustSection'
 
 function ClientPage() {
   return (
@@ -21,6 +22,7 @@ function ClientPage() {
       <ClientOutcomesSection content={clientContent.outcomes} />
       <ClientWorkingApproachSection content={clientContent.workingApproach} />
       <ClientEngagementSection content={clientContent.engagement} />
+      <ClientTrustSection content={clientContent.trust} />
       <Section
         id="contact"
         className="coming-section"

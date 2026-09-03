@@ -634,6 +634,82 @@ export type ClientEngagement = {
   action?: ClientAction
 }
 
+export type ClientTrustIcon =
+  | 'reliable' | 'quality' | 'client-focused' | 'results' | 'experience'
+  | 'projects' | 'clients' | 'satisfaction' | 'technology' | 'case-study'
+  | 'demo' | 'source' | 'report' | 'certification' | 'learning'
+
+export type ClientTrustEvidenceStatus = 'verified' | 'placeholder' | 'not-available'
+
+export type ClientTrustPrinciple = {
+  id: string
+  title: string
+  description: string
+  icon: ClientTrustIcon
+}
+
+export type ClientTrustMetric = {
+  id: string
+  value: string
+  label: string
+  context?: string
+  status: ClientTrustEvidenceStatus
+  evidenceNote?: string
+}
+
+export type ClientTrustTechnology = {
+  name: string
+  category?: string
+  status: ClientTrustEvidenceStatus
+}
+
+export type ClientTrustTestimonial = {
+  id: string
+  quote: string
+  personName: string
+  role?: string
+  organization?: string
+  rating?: number
+  status: ClientTrustEvidenceStatus
+  permissionConfirmed?: boolean
+}
+
+export type ClientTrustEvidenceLink = {
+  id: string
+  label: string
+  description: string
+  href: string
+  icon: ClientTrustIcon
+  external?: boolean
+  status: ClientTrustEvidenceStatus
+}
+
+export type ClientTrustRecognition = {
+  id: string
+  title: string
+  issuer?: string
+  description: string
+  icon: ClientTrustIcon
+  href?: string
+  status: ClientTrustEvidenceStatus
+}
+
+export type ClientTrust = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  principles: ClientTrustPrinciple[]
+  metrics: ClientTrustMetric[]
+  technologies: ClientTrustTechnology[]
+  testimonials: ClientTrustTestimonial[]
+  evidenceLinks: ClientTrustEvidenceLink[]
+  recognition: ClientTrustRecognition[]
+  closingTitle: string
+  closingStatement: string
+  action?: ClientAction
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
@@ -643,5 +719,6 @@ export type ClientContent = {
   outcomes: ClientOutcomes
   workingApproach: ClientWorkingApproach
   engagement: ClientEngagement
+  trust: ClientTrust
   inquiryLinks: ProfessionalLink[]
 }

@@ -138,7 +138,7 @@ describe('application routing', () => {
     ).toHaveAttribute('href', '#contact')
     expect(
       screen.getByRole('heading', {
-        name: 'Clear Scope. Aligned Expectations. Better Results.',
+        name: /Clear Scope.*Better Results\./,
       }),
     ).toBeInTheDocument()
     expect(
@@ -154,6 +154,26 @@ describe('application routing', () => {
     expect(
       screen.getByRole('button', { name: 'Client Responsibilities' }),
     ).toHaveAttribute('aria-expanded', 'true')
+    expect(
+      screen.getByRole('heading', {
+        name: /Proven Experience.*Trusted by Clients\./,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Trust principles' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Technology expertise' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole('list', { name: 'Verified client testimonials' }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('list', { name: 'Project evidence' }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /start a conversation/i }),
+    ).toHaveAttribute('href', '#contact')
   })
 
   it('renders the fallback page for an unknown route', () => {
