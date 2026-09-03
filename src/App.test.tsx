@@ -136,6 +136,24 @@ describe('application routing', () => {
     expect(
       screen.getByRole('link', { name: '[Start your project]' }),
     ).toHaveAttribute('href', '#contact')
+    expect(
+      screen.getByRole('heading', {
+        name: 'Clear Scope. Aligned Expectations. Better Results.',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Engagement models' }),
+    ).toBeInTheDocument()
+    expect(screen.getByText('Fixed Scope Project')).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: "What's included" }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Typical project timeline' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: 'Client Responsibilities' }),
+    ).toHaveAttribute('aria-expanded', 'true')
   })
 
   it('renders the fallback page for an unknown route', () => {

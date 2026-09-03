@@ -1,4 +1,5 @@
 import type { ClientContent } from '../types'
+import { clientEngagement } from './engagement'
 
 export const clientContent: ClientContent = {
   identity: {
@@ -600,5 +601,6 @@ export const clientContent: ClientContent = {
       href: '#contact',
     },
   },
+  engagement: clientEngagement,
   inquiryLinks: [],
 }

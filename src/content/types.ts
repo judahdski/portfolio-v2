@@ -580,6 +580,60 @@ export type ClientWorkingApproach = {
   action?: ClientAction
 }
 
+export type ClientEngagementIcon =
+  | 'scope' | 'time' | 'collaboration' | 'discovery' | 'design'
+  | 'development' | 'testing' | 'deployment' | 'support' | 'client' | 'deliverable'
+
+export type ClientEngagementItem = {
+  title: string
+  description: string
+  icon: ClientEngagementIcon
+}
+
+export type ClientEngagementModel = {
+  id: string
+  number: string
+  name: string
+  description: string
+  bestFor: string
+  scope: string[]
+  collaborationModel: string
+  timelineCategory?: string
+  supportAvailability?: string
+  icon: ClientEngagementIcon
+  recommended?: boolean
+}
+
+export type ClientTimelineStage = {
+  id: string
+  number: string
+  name: string
+  duration: string
+  description: string
+  icon: ClientEngagementIcon
+}
+
+export type ClientEngagement = {
+  kicker: string
+  title: string
+  highlightedTitle?: string
+  description: string
+  expectations: ClientEngagementItem[]
+  models: ClientEngagementModel[]
+  includedTitle: string
+  includedItems: ClientEngagementItem[]
+  timelineTitle: string
+  timelineDescription?: string
+  timeline: ClientTimelineStage[]
+  clientResponsibilities: string[]
+  deliverables: string[]
+  remoteAvailability?: string
+  onsiteAvailability?: string
+  technologyPreferences?: string[]
+  closingStatement?: string
+  action?: ClientAction
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
@@ -588,5 +642,6 @@ export type ClientContent = {
   businessWorkflow: ClientBusinessWorkflow
   outcomes: ClientOutcomes
   workingApproach: ClientWorkingApproach
+  engagement: ClientEngagement
   inquiryLinks: ProfessionalLink[]
 }
