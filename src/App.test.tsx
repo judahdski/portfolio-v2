@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { afterEach, describe, expect, it } from 'vitest'
 import App from './App'
@@ -174,6 +174,72 @@ describe('application routing', () => {
     expect(
       screen.getByRole('link', { name: /start a conversation/i }),
     ).toHaveAttribute('href', '#contact')
+    expect(
+      screen.getByRole('heading', {
+        name: /Let's build something.*great together\./,
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('list', { name: 'Contact expectations' }),
+    ).toBeInTheDocument()
+    expect(screen.getByLabelText('Your name')).toBeRequired()
+    expect(screen.getByLabelText('Work email')).toBeRequired()
+    expect(screen.getByLabelText('Project type')).toBeRequired()
+    expect(screen.getByLabelText('Tell me about your project')).toBeRequired()
+    expect(
+      screen.queryByText(/Being assembled for Phase 05/i),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('list', { name: 'Direct contact methods' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('validates required contact fields before submission', () => {
+    renderAt('/client')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Prepare Inquiry' }))
+
+    expect(screen.getByText('Please enter your name.')).toBeInTheDocument()
+    expect(
+      screen.getByText('Please enter a valid work email.'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Please select a project type.'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Please tell me a little about your project.'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Please confirm this before continuing.'),
+    ).toBeInTheDocument()
+  })
+
+  it('does not report success without a verified contact destination', () => {
+    renderAt('/client')
+
+    fireEvent.change(screen.getByLabelText('Your name'), {
+      target: { value: 'Alex Doe' },
+    })
+    fireEvent.change(screen.getByLabelText('Work email'), {
+      target: { value: 'alex@example.com' },
+    })
+    fireEvent.change(screen.getByLabelText('Project type'), {
+      target: { value: 'web-application' },
+    })
+    fireEvent.change(screen.getByLabelText('Tell me about your project'), {
+      target: { value: 'A scoped web application project.' },
+    })
+    fireEvent.click(
+      screen.getByLabelText(/I agree that my information may be used/i),
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Prepare Inquiry' }))
+
+    expect(screen.getByRole('alert')).toHaveTextContent(
+      'A verified contact destination is not configured yet.',
+    )
+    expect(
+      screen.queryByText(/Inquiry prepared successfully/i),
+    ).not.toBeInTheDocument()
   })
 
   it('renders the fallback page for an unknown route', () => {

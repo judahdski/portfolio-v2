@@ -1,6 +1,7 @@
 import type { ClientContent } from '../types'
 import { clientEngagement } from './engagement'
 import { clientTrust } from './trust'
+import { clientContact } from './contact'
 
 export const clientContent: ClientContent = {
   identity: {
@@ -604,5 +605,6 @@ export const clientContent: ClientContent = {
   },
   engagement: clientEngagement,
   trust: clientTrust,
+  contact: clientContact,
   inquiryLinks: [],
 }

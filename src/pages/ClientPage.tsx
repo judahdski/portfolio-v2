@@ -1,5 +1,3 @@
-import Container from '../components/ui/Container'
-import Section from '../components/ui/Section'
 import { clientContent } from '../content/client'
 import ClientIdentitySection from '../sections/client/ClientIdentitySection'
 import ClientProblemsSection from '../sections/client/ClientProblemsSection'
@@ -10,6 +8,7 @@ import ClientValuePropositionSection from '../sections/client/ClientValueProposi
 import ClientWorkingApproachSection from '../sections/client/ClientWorkingApproachSection'
 import ClientEngagementSection from '../sections/client/ClientEngagementSection'
 import ClientTrustSection from '../sections/client/ClientTrustSection'
+import ClientContactSection from '../sections/client/ClientContactSection'
 
 function ClientPage() {
   return (
@@ -23,16 +22,7 @@ function ClientPage() {
       <ClientWorkingApproachSection content={clientContent.workingApproach} />
       <ClientEngagementSection content={clientContent.engagement} />
       <ClientTrustSection content={clientContent.trust} />
-      <Section
-        id="contact"
-        className="coming-section"
-        aria-label="Client portfolio sections"
-      >
-        <Container className="coming-section-inner">
-          <span>Services / Case studies / Approach</span>
-          <span>Being assembled for Phase 05</span>
-        </Container>
-      </Section>
+      <ClientContactSection content={clientContent.contact} />
     </div>
   )
 }

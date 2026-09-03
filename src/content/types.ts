@@ -710,6 +710,62 @@ export type ClientTrust = {
   action?: ClientAction
 }
 
+export type ClientContactIcon =
+  | 'email' | 'calendar' | 'project' | 'linkedin' | 'github' | 'document'
+  | 'availability' | 'location' | 'clock' | 'shield'
+
+export type ClientContactMethod = {
+  id: string
+  label: string
+  description: string
+  value?: string
+  href: string
+  icon: ClientContactIcon
+  actionLabel: string
+  external?: boolean
+  available?: boolean
+  primary?: boolean
+}
+
+export type ClientContactSignal = {
+  id: string
+  title: string
+  description: string
+  icon: ClientContactIcon
+}
+
+export type ClientProjectTypeOption = { value: string; label: string }
+export type ClientBudgetOption = { value: string; label: string }
+
+export type ClientContactAvailability = {
+  status: string
+  description: string
+  available?: boolean
+}
+
+export type ClientContact = {
+  kicker: string
+  title: string
+  highlightedTitle: string
+  description: string
+  signals: ClientContactSignal[]
+  projectTypes: ClientProjectTypeOption[]
+  budgetOptions: ClientBudgetOption[]
+  methods: ClientContactMethod[]
+  availability?: ClientContactAvailability
+  workingHours?: string
+  location?: string
+  remoteAvailability?: string
+  privacyLabel: string
+  privacyHref?: string
+  submitLabel: string
+  successMessage: string
+  errorMessage: string
+  endpoint?: string
+  inquiryEmail?: string
+  closingStatement?: string
+}
+
 export type ClientContent = {
   identity: ClientIdentity
   valueProposition: ClientValueProposition
@@ -720,5 +776,6 @@ export type ClientContent = {
   workingApproach: ClientWorkingApproach
   engagement: ClientEngagement
   trust: ClientTrust
+  contact: ClientContact
   inquiryLinks: ProfessionalLink[]
 }
