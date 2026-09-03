@@ -250,7 +250,7 @@
 
 .client-value-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(12rem, 0.5fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.5fr);
   gap: 3rem;
   align-items: end;
 }
@@ -283,6 +283,7 @@
 
 .client-value-signal {
   display: grid;
+  min-width: 0;
   justify-items: center;
   gap: 1rem;
   min-height: 10rem;
@@ -1613,6 +1614,7 @@
 
 .client-engagement-heading {
   display: grid;
+  min-width: 0;
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.9fr);
   gap: clamp(2rem, 6vw, 5rem);
   align-items: end;
@@ -1650,6 +1652,9 @@
 
 .client-engagement-expectations {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   background: var(--color-border);
@@ -1658,9 +1663,15 @@
 .client-engagement-item {
   display: flex;
   gap: 0.9rem;
+  min-width: 0;
   min-height: 7.5rem;
   padding: 1.25rem;
   background: var(--color-surface);
+}
+
+.client-engagement-item>div {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .client-engagement-item>svg,
@@ -5605,7 +5616,7 @@
   }
 
   .client-value-heading {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -5620,7 +5631,7 @@
   .client-value-pillars,
   .client-value-steps,
   .client-value-expectations>ul {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .client-value-subheading {
@@ -5642,7 +5653,7 @@
   }
 
   .client-problems-heading {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -5705,6 +5716,7 @@
   }
 
   .client-workflow-heading {
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -5782,6 +5794,7 @@
   }
 
   .client-approach-heading {
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -5836,6 +5849,7 @@
   }
 
   .client-engagement-heading {
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -5844,7 +5858,7 @@
   }
 
   .client-engagement-expectations {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .client-engagement-models {
