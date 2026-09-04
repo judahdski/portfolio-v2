@@ -1,16 +1,19 @@
-import { useEffect, useRef, useState, type HTMLAttributes } from 'react'
+import { useEffect, useRef, type HTMLAttributes } from 'react'
 
 type SectionProps = HTMLAttributes<HTMLElement>
 
 function Section({ className = '', ...props }: SectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const section = sectionRef.current
 
-    if (!section || !('IntersectionObserver' in window)) {
-      setIsVisible(true)
+    if (!section) {
+      return
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      section.classList.add('is-visible')
       return
     }
 
@@ -18,7 +21,7 @@ function Section({ className = '', ...props }: SectionProps) {
       ([entry]) => {
         if (!entry.isIntersecting) return
 
-        setIsVisible(true)
+        section.classList.add('is-visible')
         observer.disconnect()
       },
       { rootMargin: '0px 0px -10% 0px', threshold: 0.08 },
@@ -31,7 +34,7 @@ function Section({ className = '', ...props }: SectionProps) {
   return (
     <section
       ref={sectionRef}
-      className={`section motion-section${isVisible ? ' is-visible' : ''} ${className}`.trim()}
+      className={`section motion-section ${className}`.trim()}
       {...props}
     />
   )

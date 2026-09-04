@@ -5604,6 +5604,16 @@
 
 @media (max-width: 640px) {
 
+  .client-value-heading>*,
+  .client-problems-heading>*,
+  .client-services-heading>*,
+  .client-workflow-heading>*,
+  .client-outcomes-heading>*,
+  .client-approach-heading>*,
+  .client-engagement-heading>* {
+    min-width: 0;
+  }
+
   .client-contact-heading>div:last-child,
   .client-contact-layout {
     grid-template-columns: 1fr;
@@ -5679,6 +5689,7 @@
 
   .client-identity-main h1 {
     font-size: clamp(4rem, 22vw, 7rem);
+    overflow-wrap: anywhere;
   }
 
   .client-identity-actions {
@@ -5706,6 +5717,7 @@
 
   .client-value-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-value-signal {
@@ -5743,9 +5755,11 @@
 
   .client-problems-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-problems-visual {
+    width: 100%;
     min-height: 9rem;
   }
 
@@ -5771,6 +5785,7 @@
 
   .client-services-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-services-system {
@@ -5806,9 +5821,11 @@
 
   .client-workflow-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-workflow-visual {
+    width: 100%;
     min-height: 9rem;
   }
 
@@ -5861,6 +5878,7 @@
 
   .client-outcomes-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-outcomes-visual {
@@ -5884,6 +5902,7 @@
 
   .client-approach-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-approach-commitment {
@@ -5939,6 +5958,7 @@
 
   .client-engagement-heading h2 {
     font-size: clamp(3rem, 14vw, 5rem);
+    overflow-wrap: anywhere;
   }
 
   .client-engagement-expectations {
