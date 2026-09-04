@@ -203,6 +203,7 @@ function RecruiterEngineeringDetailsSection({
           </div>
 
           <div
+            key={activeTab}
             id={`engineering-panel-${activeTab}`}
             className="engineering-tab-panel"
             role="tabpanel"

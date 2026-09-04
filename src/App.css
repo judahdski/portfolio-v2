@@ -49,7 +49,9 @@
 .text-link {
   color: var(--color-text-secondary);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .audience-link:hover,
@@ -57,6 +59,16 @@
 .header-contact:hover,
 .text-link:hover {
   color: var(--color-accent-strong);
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.icon-button:focus-visible {
+  transform: translateY(-2px);
 }
 
 .header-contact {
@@ -75,6 +87,27 @@
   justify-content: space-between;
   min-height: calc(100svh - 8.5rem);
   padding: var(--space-section) 0 4rem;
+}
+
+.motion-section {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.motion-section.is-visible {
+  animation: section-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .page-intro {
@@ -1958,6 +1991,19 @@
 .client-engagement-disclosure-content {
   padding: 0 1rem 1rem;
   border-top: 1px solid var(--color-border);
+  animation: disclosure-reveal 260ms ease-out;
+}
+
+@keyframes disclosure-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .client-engagement-detail-list>div {
@@ -2116,6 +2162,7 @@
 .client-trust-disclosure-content {
   padding: 0 1.25rem 1.25rem;
   border-top: 1px solid var(--color-border);
+  animation: disclosure-reveal 260ms ease-out;
 }
 
 .client-trust-metrics {
@@ -2468,6 +2515,7 @@
 .client-contact-disclosure-content {
   padding: 0 1rem 1rem;
   border-top: 1px solid var(--color-border);
+  animation: disclosure-reveal 260ms ease-out;
 }
 
 .client-contact-form {
@@ -4261,6 +4309,10 @@
   font: inherit;
   font-size: 0.58rem;
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .engineering-tabs button:first-child {
@@ -4286,6 +4338,33 @@
 .engineering-tab-panel {
   min-height: 31rem;
   padding: 1rem;
+  animation: tab-panel-reveal 320ms ease-out;
+}
+
+@keyframes tab-panel-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .motion-section,
+  .motion-section.is-visible,
+  .engineering-tab-panel,
+  .client-engagement-disclosure-content,
+  .client-trust-disclosure-content,
+  .client-contact-disclosure-content {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 
 .engineering-overview {
@@ -5175,7 +5254,8 @@
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast),
-    border-color var(--transition-fast);
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .button-primary {
@@ -5185,6 +5265,7 @@
 
 .button-primary:hover {
   background: var(--color-accent-strong);
+  transform: translateY(-2px);
 }
 
 .button-secondary {
@@ -5196,6 +5277,7 @@
 .button-secondary:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .button:disabled {
@@ -5216,12 +5298,14 @@
   cursor: pointer;
   transition:
     border-color var(--transition-fast),
-    color var(--transition-fast);
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .icon-button:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .badge {
